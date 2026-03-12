@@ -52,8 +52,11 @@ const packages = [
 
 export default function Lessons() {
   return (
-    <section id="lessons" className="bg-[#f5f0e8] py-24 px-4">
-      <div className="max-w-3xl mx-auto">
+    <section id="lessons" className="relative py-24 px-4">
+      {/* Background image with overlay */}
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/images/aesthetic-4.jpg')" }} />
+      <div className="absolute inset-0 bg-[#f5f0e8]/92" />
+      <div className="relative z-10 max-w-3xl mx-auto">
         {/* Header */}
         <div className="text-center mb-14">
           <span className="text-[#c9a84c] text-sm font-semibold tracking-widest uppercase">Lesson Packages</span>

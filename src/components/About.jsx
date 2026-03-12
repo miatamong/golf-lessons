@@ -46,7 +46,7 @@ export default function About() {
               <div className="absolute -top-4 -left-4 w-32 h-32 bg-[#e8dcc8] rounded-full opacity-50" />
               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[#1d4ed8]/10 rounded-full" />
               <img
-                src="https://images.unsplash.com/photo-1593111774240-d529f12cf4bb?w=600&q=80"
+                src="/images/aesthetic-3.jpg"
                 alt="Willis Lee Golf Pro"
                 className="relative rounded-2xl w-full object-cover aspect-square shadow-2xl"
               />

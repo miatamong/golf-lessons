@@ -8,11 +8,11 @@ export default function Hero() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=1920&q=80')`,
+          backgroundImage: `url('/images/aesthetic-2.jpg')`,
         }}
       />
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#1e3a5f]/80 via-[#1e3a5f]/60 to-[#1e3a5f]/90" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/60" />
 
       {/* Decorative golf course lines */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
