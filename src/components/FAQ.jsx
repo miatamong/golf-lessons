@@ -37,23 +37,28 @@ export default function FAQ() {
 
         <div className="space-y-3">
           {faqs.map((item, i) => (
-            <div
-              key={i}
-              className="border border-[#e8dcc8] rounded-2xl overflow-hidden"
-            >
+            <div key={i} className="rounded-2xl overflow-hidden">
               <button
                 onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left hover:bg-[#f5f0e8] transition-colors duration-150"
+                className={`w-full flex items-center justify-between gap-4 px-6 py-5 text-left transition-colors duration-150 ${
+                  open === i ? 'bg-[#1e3a5f]' : 'bg-[#f5f0e8] hover:bg-[#e8dcc8]'
+                }`}
               >
-                <span className="font-semibold text-[#1e3a5f]">{item.q}</span>
-                <span className={`flex-shrink-0 w-6 h-6 rounded-full border-2 border-[#c9a84c] flex items-center justify-center transition-transform duration-200 ${open === i ? 'rotate-45' : ''}`}>
-                  <svg className="w-3 h-3 text-[#c9a84c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <span className={`font-semibold ${open === i ? 'text-white' : 'text-[#1e3a5f]'}`}>
+                  <span className={`font-bold mr-2 ${open === i ? 'text-[#c9a84c]' : 'text-[#c9a84c]'}`}>Q.</span>
+                  {item.q}
+                </span>
+                <span className={`flex-shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-transform duration-200 ${
+                  open === i ? 'border-[#c9a84c] rotate-45' : 'border-[#1e3a5f]'
+                }`}>
+                  <svg className={`w-3 h-3 ${open === i ? 'text-[#c9a84c]' : 'text-[#1e3a5f]'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 4v16m8-8H4" />
                   </svg>
                 </span>
               </button>
               {open === i && (
-                <div className="px-6 pb-5 text-[#1e3a5f]/70 text-sm leading-relaxed border-t border-[#e8dcc8] pt-4">
+                <div className="bg-[#f5f0e8] px-6 py-5 text-sm leading-relaxed text-[#1e3a5f]/80">
+                  <span className="font-bold text-[#1e3a5f] mr-2">A.</span>
                   {item.a}
                 </div>
               )}
