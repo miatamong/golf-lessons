@@ -1,0 +1,31 @@
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import About from './components/About'
+import Lessons from './components/Lessons'
+import Booking from './components/Booking'
+import FAQ from './components/FAQ'
+import Contact from './components/Contact'
+import Footer from './components/Footer'
+
+export default function App() {
+  return (
+    <>
+      <Navbar />
+      <Hero />
+      <About />
+      <Lessons />
+      <Booking />
+      <FAQ />
+      <Contact />
+      <Footer />
+
+      {/* Sticky mobile booking button */}
+      <a
+        href="#booking"
+        className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 flex sm:hidden items-center gap-2 bg-[#1e3a5f] hover:bg-[#1d4ed8] text-white font-semibold px-6 py-3.5 rounded-full shadow-2xl transition-all duration-200 hover:-translate-y-0.5 active:scale-95"
+      >
+        <span>📅</span> Book Now
+      </a>
+    </>
+  )
+}

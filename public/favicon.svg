@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Putting green -->
+  <circle cx="32" cy="42" r="20" fill="#2e7d4f"/>
+  <!-- Green highlight/depth -->
+  <circle cx="32" cy="42" r="20" fill="none" stroke="#1e3a5f" stroke-width="1.5" opacity="0.4"/>
+  <!-- Hole -->
+  <circle cx="32" cy="46" r="4" fill="#1e3a5f"/>
+  <!-- Flagstick -->
+  <line x1="32" y1="10" x2="32" y2="46" stroke="#f5f0e8" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- Red flag -->
+  <polygon points="32,10 50,18 32,27" fill="#c0392b"/>
+  <!-- Flag shine -->
+  <polygon points="32,10 50,18 32,27" fill="none" stroke="#e05540" stroke-width="0.8" opacity="0.6"/>
+</svg>
