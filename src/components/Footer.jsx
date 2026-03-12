@@ -15,7 +15,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-white/50 text-sm leading-relaxed">
-              Helping golfers reach their full potential since 2009.
+              Anyone • Anywhere • Swing
             </p>
           </div>
 

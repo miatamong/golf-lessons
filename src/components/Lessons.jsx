@@ -52,13 +52,13 @@ const packages = [
 
 export default function Lessons() {
   return (
-    <section id="lessons" className="relative py-24 px-4">
+    <section id="lessons" className="relative py-16 sm:py-24 px-4">
       {/* Background image with overlay */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/images/aesthetic-4.jpg')" }} />
       <div className="absolute inset-0 bg-[#f5f0e8]/92" />
       <div className="relative z-10 max-w-3xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-10 sm:mb-14">
           <span className="text-[#c9a84c] text-sm font-semibold tracking-widest uppercase">Lesson Packages</span>
           <h2 className="mt-2 text-4xl sm:text-5xl font-bold text-[#1e3a5f]">Invest in Your Game</h2>
           <div className="mt-4 w-16 h-1 bg-[#c9a84c] mx-auto rounded-full" />
@@ -72,7 +72,7 @@ export default function Lessons() {
           {packages.map((pkg, i) => (
             <div
               key={pkg.name}
-              className={`flex items-center gap-4 px-7 py-5 hover:bg-[#f5f0e8] transition-colors duration-150 ${
+              className={`flex items-center gap-3 sm:gap-4 px-4 sm:px-7 py-4 sm:py-5 hover:bg-[#f5f0e8] transition-colors duration-150 ${
                 i !== packages.length - 1 ? 'border-b border-[#e8dcc8]' : ''
               }`}
             >

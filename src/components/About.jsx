@@ -30,16 +30,16 @@ const awards = [
 
 export default function About() {
   return (
-    <section id="about" className="bg-white py-24 px-4">
+    <section id="about" className="bg-white py-16 sm:py-24 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-16">
           <span className="text-[#c9a84c] text-sm font-semibold tracking-widest uppercase">About the Pro</span>
           <h2 className="mt-2 text-4xl sm:text-5xl font-bold text-[#1e3a5f]">Meet Willis Lee</h2>
           <div className="mt-4 w-16 h-1 bg-[#c9a84c] mx-auto rounded-full" />
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           {/* Left — photo + bio */}
           <div>
             <div className="relative mb-8">

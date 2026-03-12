@@ -29,7 +29,7 @@ export default function Hero() {
           Private Golf Instructor
         </p>
 
-        <p className="text-base sm:text-lg text-white/60 max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="text-base sm:text-lg text-white/60 max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed">
           Elevate your game with personalized, data-driven coaching from a decorated tournament professional.
           Serving golfers of all skill levels.
         </p>
@@ -37,20 +37,20 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="#booking"
-            className="bg-[#c9a84c] hover:bg-[#b8963e] text-white font-semibold px-8 py-4 rounded-full text-base transition-all duration-200 shadow-xl hover:shadow-2xl hover:-translate-y-0.5"
+            className="bg-[#c9a84c] hover:bg-[#b8963e] text-white font-semibold px-6 py-3 sm:px-8 sm:py-4 rounded-full text-sm sm:text-base transition-all duration-200 shadow-xl hover:shadow-2xl hover:-translate-y-0.5"
           >
             Book a Lesson
           </a>
           <a
             href="#about"
-            className="border-2 border-white/40 hover:border-white text-white font-semibold px-8 py-4 rounded-full text-base transition-all duration-200 hover:bg-white/10"
+            className="border-2 border-white/40 hover:border-white text-white font-semibold px-6 py-3 sm:px-8 sm:py-4 rounded-full text-sm sm:text-base transition-all duration-200 hover:bg-white/10"
           >
             Meet Willis
           </a>
         </div>
 
         {/* Stats */}
-        <div className="mt-16 grid grid-cols-3 gap-8 max-w-md mx-auto">
+        <div className="mt-10 sm:mt-16 grid grid-cols-3 gap-6 sm:gap-8 max-w-md mx-auto">
           {[
             { value: '3+', label: 'Years Teaching' },
             { value: '25+', label: 'Students Coached' },

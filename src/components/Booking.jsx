@@ -20,10 +20,10 @@ export default function Booking() {
   const current = tabs.find((t) => t.id === active)
 
   return (
-    <section id="booking" className="bg-[#f5f0e8] py-24 px-4">
+    <section id="booking" className="bg-[#f5f0e8] py-16 sm:py-24 px-4">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-16">
           <span className="text-[#c9a84c] text-sm font-semibold tracking-widest uppercase">Schedule</span>
           <h2 className="mt-2 text-4xl sm:text-5xl font-bold text-[#1e3a5f]">Book a Private Lesson</h2>
           <div className="mt-4 w-16 h-1 bg-[#c9a84c] mx-auto rounded-full" />
@@ -33,7 +33,7 @@ export default function Booking() {
         </div>
 
         {/* Free Trial Callout */}
-        <div className="mb-10 bg-[#1e3a5f] rounded-2xl px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-lg">
+        <div className="mb-8 sm:mb-10 bg-[#1e3a5f] rounded-2xl px-5 sm:px-8 py-5 sm:py-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-lg">
           <div>
             <p className="text-white font-semibold text-lg leading-snug">
               First time? Start with a free class -{' '}

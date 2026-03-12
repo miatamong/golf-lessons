@@ -1,15 +1,15 @@
 export default function Contact() {
   return (
-    <section id="contact" className="bg-[#1e3a5f] py-24 px-4">
+    <section id="contact" className="bg-[#1e3a5f] py-16 sm:py-24 px-4">
       <div className="max-w-5xl mx-auto">
 
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-16">
           <span className="text-[#c9a84c] text-sm font-semibold tracking-widest uppercase">Get in Touch</span>
           <h2 className="mt-2 text-4xl sm:text-5xl font-bold text-white">Contact Willis</h2>
           <div className="mt-4 w-16 h-1 bg-[#c9a84c] mx-auto rounded-full" />
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
           {/* Left — contact info */}
           <div className="text-white space-y-8">
