@@ -1,13 +1,13 @@
 export default function Footer() {
   return (
-    <footer className="bg-[#0f2440] text-white py-12 px-4">
+    <footer className="bg-[#0f2440] text-white py-12 pb-24 sm:pb-12 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="grid sm:grid-cols-3 gap-8 mb-10">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 bg-[#c9a84c] rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">WL</span>
+              <div className="w-9 h-9 bg-[#1e3a5f] rounded-full flex items-center justify-center border border-white/20">
+                <span className="text-[#c9a84c] font-bold text-sm">WL</span>
               </div>
               <div>
                 <span className="font-bold text-lg leading-tight block">Willis Lee</span>
@@ -47,10 +47,26 @@ export default function Footer() {
               <li>778-988-9921</li>
               <li>Surrey, BC</li>
             </ul>
+            <div className="flex gap-3 mt-4">
+              {[
+                { name: 'Instagram', href: 'https://instagram.com/willisleegolf' },
+                { name: 'KakaoTalk', href: 'https://open.kakao.com/o/s8THCgni' },
+              ].map((s) => (
+                <a
+                  key={s.name}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-white/10 hover:bg-[#c9a84c]/20 border border-white/20 hover:border-[#c9a84c]/50 rounded-full text-sm text-white/70 hover:text-[#c9a84c] font-semibold transition-all duration-200"
+                >
+                  {s.name}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-white/30">
+        <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-white/50">
           <span>© {new Date().getFullYear()} Willis Lee Golf. All rights reserved.</span>
           <span>Private Golf Instructor · Surrey, BC</span>
         </div>

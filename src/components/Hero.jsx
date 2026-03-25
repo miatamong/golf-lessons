@@ -6,7 +6,9 @@ export default function Hero() {
     >
       {/* Background */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-bottom bg-no-repeat"
+        role="img"
+        aria-label="Golf course background"
         style={{
           backgroundImage: `url('/images/aesthetic-2.jpg')`,
         }}
@@ -20,34 +22,25 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4">
+      <div className="relative z-10 text-center px-4 max-w-2xl mx-auto">
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-2">
           Willis <span className="text-[#c9a84c]">Lee</span>
         </h1>
 
-        <p className="text-xl sm:text-2xl text-white/70 font-light tracking-wide mb-3">
-          Private Golf Instructor
+        <p className="text-lg sm:text-2xl text-white font-medium mb-4">
+          Golf is for everyone. Start with a free lesson.
         </p>
 
-        <p className="text-base sm:text-lg text-white/60 max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed">
-          Elevate your game with personalized, data-driven coaching from a decorated tournament professional.
-          Serving golfers of all skill levels.
+        <p className="text-sm sm:text-base text-white/70 max-w-lg mx-auto mb-6 sm:mb-8 leading-relaxed">
+          Complete beginner or occasional player - I will meet you where you are, in Surrey or at your home course.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="#booking"
-            className="bg-[#c9a84c] hover:bg-[#b8963e] text-white font-semibold px-6 py-3 sm:px-8 sm:py-4 rounded-full text-sm sm:text-base transition-all duration-200 shadow-xl hover:shadow-2xl hover:-translate-y-0.5"
-          >
-            Book a Lesson
-          </a>
-          <a
-            href="#about"
-            className="border-2 border-white/40 hover:border-white text-white font-semibold px-6 py-3 sm:px-8 sm:py-4 rounded-full text-sm sm:text-base transition-all duration-200 hover:bg-white/10"
-          >
-            Meet Willis
-          </a>
-        </div>
+        <a
+          href="#booking"
+          className="inline-block bg-[#c9a84c] hover:bg-[#b8963e] text-white font-semibold px-8 py-4 rounded-full text-sm sm:text-base transition-all duration-200 shadow-xl hover:shadow-2xl hover:-translate-y-0.5"
+        >
+          Book Free Class
+        </a>
 
         {/* Stats */}
         <div className="mt-10 sm:mt-16 grid grid-cols-3 gap-6 sm:gap-8 max-w-md mx-auto">
@@ -57,8 +50,8 @@ export default function Hero() {
             { value: '10+', label: 'Years in Golf' },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
-              <div className="text-3xl font-bold text-[#c9a84c]">{stat.value}</div>
-              <div className="text-white/60 text-xs mt-1 tracking-wide">{stat.label}</div>
+              <div className="text-4xl sm:text-3xl font-bold text-[#c9a84c]">{stat.value}</div>
+              <div className="text-white/80 text-sm sm:text-xs mt-1 tracking-wide">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -66,8 +59,8 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 animate-bounce">
-        <span className="text-white/40 text-xs tracking-widest uppercase">Scroll</span>
-        <svg className="w-4 h-4 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <span className="text-white/60 text-xs tracking-widest uppercase">Scroll</span>
+        <svg className="w-4 h-4 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
       </div>

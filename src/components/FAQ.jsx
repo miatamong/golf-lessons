@@ -27,10 +27,10 @@ export default function FAQ() {
   const [open, setOpen] = useState(0)
 
   return (
-    <section id="faq" className="bg-white py-16 sm:py-24 px-4">
+    <section id="faq" className="bg-white pt-8 sm:pt-12 pb-16 sm:pb-24 px-4">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-10 sm:mb-16">
-          <span className="text-[#c9a84c] text-sm font-semibold tracking-widest uppercase">FAQ</span>
+          <span className="text-[#7A6A2E] text-sm font-semibold tracking-widest uppercase">FAQ</span>
           <h2 className="mt-2 text-4xl sm:text-5xl font-bold text-[#1e3a5f]">Common Questions</h2>
           <div className="mt-4 w-16 h-1 bg-[#c9a84c] mx-auto rounded-full" />
         </div>
@@ -40,12 +40,13 @@ export default function FAQ() {
             <div key={i} className="rounded-2xl overflow-hidden">
               <button
                 onClick={() => setOpen(open === i ? null : i)}
+                aria-expanded={open === i}
                 className={`w-full flex items-center justify-between gap-4 px-6 py-5 text-left transition-colors duration-150 ${
                   open === i ? 'bg-[#1e3a5f]' : 'bg-[#f5f0e8] hover:bg-[#e8dcc8]'
                 }`}
               >
                 <span className={`font-semibold ${open === i ? 'text-white' : 'text-[#1e3a5f]'}`}>
-                  <span className={`font-bold mr-2 ${open === i ? 'text-[#c9a84c]' : 'text-[#c9a84c]'}`}>Q.</span>
+                  <span className={`font-bold mr-2 ${open === i ? 'text-[#c9a84c]' : 'text-[#7A6A2E]'}`}>Q.</span>
                   {item.q}
                 </span>
                 <span className={`flex-shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-transform duration-200 ${
@@ -64,6 +65,18 @@ export default function FAQ() {
               )}
             </div>
           ))}
+        </div>
+
+        <div className="text-center mt-10">
+          <p className="text-[#1e3a5f]/60 text-sm mb-3">
+            Still have questions? <a href="#contact" className="text-[#c9a84c] font-semibold hover:underline">Reach out.</a> Ready to go?
+          </p>
+          <a
+            href="#booking"
+            className="inline-block bg-[#1e3a5f] hover:bg-[#16304f] text-white font-semibold px-8 py-3.5 rounded-full text-sm transition-all duration-200 shadow-lg hover:-translate-y-0.5"
+          >
+            Claim Your Free Class
+          </a>
         </div>
       </div>
     </section>

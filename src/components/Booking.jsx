@@ -23,39 +23,20 @@ export default function Booking() {
     <section id="booking" className="bg-[#f5f0e8] py-16 sm:py-24 px-4">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-10 sm:mb-16">
-          <span className="text-[#c9a84c] text-sm font-semibold tracking-widest uppercase">Schedule</span>
+        <div className="text-center mb-6 sm:mb-8">
+          <span className="text-[#7A6A2E] text-sm font-semibold tracking-widest uppercase">Schedule</span>
           <h2 className="mt-2 text-4xl sm:text-5xl font-bold text-[#1e3a5f]">Book a Private Lesson</h2>
-          <div className="mt-4 w-16 h-1 bg-[#c9a84c] mx-auto rounded-full" />
-          <p className="mt-6 text-[#1e3a5f]/60 max-w-lg mx-auto text-sm">
-            Pick a date and time below. Confirmation is sent to your email instantly.
+          <div className="mt-3 w-16 h-1 bg-[#c9a84c] mx-auto rounded-full" />
+          <p className="mt-4 text-[#1e3a5f]/80 max-w-lg mx-auto text-sm">
+            Pick a time. <span className="text-[#c9a84c] font-semibold">First class is on us.</span>
+          </p>
+          <p className="mt-2 text-[#c9a84c] font-semibold text-sm">
+            Spring schedule now open · Limited spots available this week
           </p>
         </div>
 
-        {/* Free Trial Callout */}
-        <div className="mb-8 sm:mb-10 bg-[#1e3a5f] rounded-2xl px-5 sm:px-8 py-5 sm:py-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-lg">
-          <div>
-            <p className="text-white font-semibold text-lg leading-snug">
-              First time? Start with a free class -{' '}
-              <span className="text-[#c9a84c]">no commitment, no pressure.</span>
-            </p>
-            <p className="text-white/50 text-sm mt-1 flex items-center gap-1.5">
-              <svg className="w-4 h-4 text-[#c9a84c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-              Book your free spot below
-            </p>
-          </div>
-          <button
-            onClick={() => setActive('trial')}
-            className="flex-shrink-0 bg-[#c9a84c] hover:bg-[#b8963e] text-white font-semibold px-6 py-3 rounded-full text-sm transition-all duration-200 shadow hover:-translate-y-0.5"
-          >
-            Claim Free Class
-          </button>
-        </div>
-
         {/* Tabs */}
-        <div className="flex gap-3 mb-6 justify-center">
+        <div className="flex gap-3 mb-4 justify-center">
           {tabs.map((tab) => (
             <button
               key={tab.id}
@@ -68,10 +49,10 @@ export default function Booking() {
             >
               {tab.label}
               {tab.tag && (
-                <span className={`text-xs px-2 py-0.5 rounded-full font-bold ${
-                  active === tab.id ? 'bg-[#c9a84c] text-white' : 'bg-[#c9a84c]/15 text-[#c9a84c]'
+                <span className={`text-xs font-semibold ${
+                  active === tab.id ? 'text-[#c9a84c]' : 'text-[#c9a84c]/80'
                 }`}>
-                  {tab.tag}
+                  · {tab.tag}
                 </span>
               )}
             </button>
@@ -83,9 +64,26 @@ export default function Booking() {
           <iframe
             key={current.src}
             src={current.src}
-            style={{ width: '100%', height: '700px', border: 'none' }}
+            loading="lazy"
+            className="w-full border-none h-[500px] sm:h-[650px] lg:h-[700px]"
             title={current.label}
           />
+        </div>
+
+        {/* What happens next */}
+        <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center text-sm text-[#1e3a5f]/70">
+          <div>
+            <span className="block text-[#c9a84c] font-bold text-base mb-1">1. Book</span>
+            Pick a date - your first class is free.
+          </div>
+          <div>
+            <span className="block text-[#c9a84c] font-bold text-base mb-1">2. Show up</span>
+            Bring your clubs and comfortable golf attire. That's it.
+          </div>
+          <div>
+            <span className="block text-[#c9a84c] font-bold text-base mb-1">3. Improve</span>
+            Get personalized feedback and a plan to level up your game.
+          </div>
         </div>
       </div>
     </section>

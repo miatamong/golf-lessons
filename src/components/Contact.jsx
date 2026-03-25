@@ -9,9 +9,9 @@ export default function Contact() {
           <div className="mt-4 w-16 h-1 bg-[#c9a84c] mx-auto rounded-full" />
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="max-w-2xl mx-auto">
 
-          {/* Left — contact info */}
+          {/* Contact info */}
           <div className="text-white space-y-8">
             <p className="text-white/70 leading-relaxed text-lg">
               Have questions about lessons, pricing, or availability? Reach out directly and Willis will get back to you within 24 hours.
@@ -53,7 +53,7 @@ export default function Contact() {
                     {item.icon}
                   </div>
                   <div>
-                    <div className="text-white/40 text-xs font-medium uppercase tracking-wide">{item.label}</div>
+                    <div className="text-white/60 text-xs font-medium uppercase tracking-wide">{item.label}</div>
                     <div className="text-white mt-0.5">{item.value}</div>
                   </div>
                 </div>
@@ -62,16 +62,18 @@ export default function Contact() {
 
             {/* Social links */}
             <div>
-              <div className="text-white/40 text-xs font-medium uppercase tracking-wide mb-3">Follow Willis</div>
+              <div className="text-white/60 text-xs font-medium uppercase tracking-wide mb-3">Follow Willis</div>
               <div className="flex gap-3">
                 {[
-                  { name: 'Instagram', href: 'http://instagram.com/willisleegolf' },
-                  { name: 'KakaoTalk', href: '#' },
+                  { name: 'Instagram', href: 'https://instagram.com/willisleegolf' },
+                  { name: 'KakaoTalk', href: 'https://open.kakao.com/o/s8THCgni' },
                 ].map((s) => (
                   <a
                     key={s.name}
                     href={s.href}
-                    className="px-4 py-2 bg-white/10 hover:bg-[#c9a84c]/20 border border-white/20 hover:border-[#c9a84c]/50 rounded-lg text-sm text-white/70 hover:text-[#c9a84c] transition-all duration-200"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-white/10 hover:bg-[#c9a84c]/20 border border-white/20 hover:border-[#c9a84c]/50 rounded-full text-sm text-white/70 hover:text-[#c9a84c] font-semibold transition-all duration-200"
                   >
                     {s.name}
                   </a>
@@ -80,12 +82,6 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Right — photo */}
-          <img
-            src="/images/aesthetic-1.jpg"
-            alt="Willis Lee on the course"
-            className="rounded-2xl w-full object-cover aspect-square shadow-2xl"
-          />
 
         </div>
       </div>
