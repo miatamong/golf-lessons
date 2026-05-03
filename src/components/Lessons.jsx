@@ -1,85 +1,3 @@
-const beginnerPackages = [
-  {
-    name: 'Free Trial Class',
-    price: 'Free',
-    duration: '45 min',
-    tag: 'Start here',
-    desc: 'Not sure where to start? Try a free class with no commitment and no pressure.',
-  },
-  {
-    name: 'Intro 1:1 Lesson',
-    price: '$80',
-    duration: '60 min',
-    tag: 'First-time only',
-    desc: 'Your first official session - includes a full swing assessment to identify your strengths and areas for improvement.',
-  },
-  {
-    name: 'Putting',
-    price: '$65',
-    duration: '45 min',
-    tag: 'Recommended',
-    desc: 'Stroke mechanics, green reading & distance control.',
-  },
-  {
-    name: '1:1 Lesson',
-    price: '$100',
-    duration: '45 min',
-    tag: null,
-    desc: 'Private lesson tailored entirely to your game.',
-  },
-]
-
-const advancedPackages = [
-  {
-    name: 'Rounding - 9 Holes',
-    price: '$120',
-    duration: '9 holes',
-    tag: null,
-    desc: 'On-course coaching - strategy, shot selection & course management.',
-  },
-  {
-    name: 'Rounding - Full Course',
-    price: '$200',
-    duration: '18 holes',
-    tag: null,
-    desc: 'Full round of on-course coaching - complete game strategy and feedback.',
-  },
-  {
-    name: '1:1 - 5 Pack',
-    price: '$450',
-    duration: '5 x 45 min',
-    tag: 'Save $50',
-    desc: 'Five private lessons with progress tracking and text support between sessions.',
-  },
-]
-
-function PackageRow({ pkg, isLast }) {
-  return (
-    <div
-      className={`flex items-center gap-3 sm:gap-4 px-4 sm:px-7 py-4 sm:py-5 transition-colors duration-150 ${
-        pkg.price === 'Free' ? 'bg-[#c9a84c]/5' : 'hover:bg-[#f5f0e8]'
-      } ${!isLast ? 'border-b border-[#e8dcc8]' : ''}`}
-    >
-      <div className="flex-1 min-w-0">
-        <div className="flex items-center gap-2 flex-wrap">
-          <span className="font-semibold text-[#1e3a5f]">{pkg.name}</span>
-          <span className="text-xs text-[#1e3a5f]/70">{pkg.duration}</span>
-          {pkg.tag && (
-            <span className="text-xs font-bold text-[#7A6A2E] bg-[#c9a84c]/10 px-2 py-0.5 rounded-full">
-              {pkg.tag}
-            </span>
-          )}
-        </div>
-        <p className="text-sm text-[#1e3a5f]/70 mt-0.5">{pkg.desc}</p>
-      </div>
-      <div className="text-right flex-shrink-0">
-        <div className={`text-xl font-bold ${pkg.price === 'Free' ? 'text-[#7A6A2E]' : 'text-[#1e3a5f]'}`}>{pkg.price}</div>
-        {pkg.price !== 'Free' && <div className="text-xs text-[#1e3a5f]/60">CAD</div>}
-      </div>
-    </div>
-  )
-}
-
 export default function Lessons() {
   return (
     <section id="lessons" className="relative py-16 sm:py-24 px-4">
@@ -91,33 +9,117 @@ export default function Lessons() {
           <h2 className="mt-2 text-4xl sm:text-5xl font-bold text-[#1e3a5f]">Lessons & Pricing</h2>
           <div className="mt-4 w-16 h-1 bg-[#c9a84c] mx-auto rounded-full" />
           <p className="mt-6 text-[#1e3a5f]/80">
-            New to golf? Start with a free class. All sessions held in <strong className="text-[#1e3a5f]">Surrey, BC</strong>.
+            All sessions held in <strong className="text-[#1e3a5f]">Surrey, BC</strong>.
           </p>
         </div>
 
-        {/* For New Students label */}
-        <div className="text-center mb-6">
-          <span className="text-[#1e3a5f]/40 text-xs font-semibold uppercase tracking-widest">For new students</span>
+        {/* Private (1:1) */}
+        <div className="mb-10">
+          <h3 className="text-lg font-bold text-[#1e3a5f] mb-4">Private (1:1)</h3>
+          <div className="bg-white rounded-3xl shadow-lg border border-[#e8dcc8] overflow-hidden">
+            {/* Column headers */}
+            <div className="flex px-4 sm:px-7 py-3 border-b border-[#e8dcc8] bg-[#f5f0e8]">
+              <div className="flex-1" />
+              <div className="w-28 sm:w-36 text-right text-xs font-semibold text-[#1e3a5f]/50 uppercase tracking-widest">1 hr</div>
+              <div className="w-28 sm:w-36 text-right text-xs font-semibold text-[#1e3a5f]/50 uppercase tracking-widest">45 min</div>
+            </div>
+
+            {/* Single */}
+            <div className="flex items-center px-4 sm:px-7 py-4 sm:py-5 border-b border-[#e8dcc8]">
+              <div className="flex-1">
+                <div className="font-semibold text-[#1e3a5f]">Single</div>
+              </div>
+              <div className="w-28 sm:w-36 text-right">
+                <div className="text-xl font-bold text-[#1e3a5f]">$160</div>
+              </div>
+              <div className="w-28 sm:w-36 text-right">
+                <div className="text-xl font-bold text-[#1e3a5f]">$130</div>
+              </div>
+            </div>
+
+            {/* 5-Pack */}
+            <div className="flex items-center px-4 sm:px-7 py-4 sm:py-5 border-b border-[#e8dcc8]">
+              <div className="flex-1">
+                <div className="font-semibold text-[#1e3a5f]">5-Session Pack</div>
+                <div className="text-xs text-[#1e3a5f]/50 mt-0.5">Total $760 · $620</div>
+              </div>
+              <div className="w-28 sm:w-36 text-right">
+                <div className="text-xl font-bold text-[#1e3a5f]">$152</div>
+                <div className="text-xs text-[#7A6A2E]">Save $8/session</div>
+              </div>
+              <div className="w-28 sm:w-36 text-right">
+                <div className="text-xl font-bold text-[#1e3a5f]">$124</div>
+                <div className="text-xs text-[#7A6A2E]">Save $6/session</div>
+              </div>
+            </div>
+
+            {/* 10-Pack */}
+            <div className="flex items-center px-4 sm:px-7 py-4 sm:py-5">
+              <div className="flex-1">
+                <div className="font-semibold text-[#1e3a5f]">10-Session Pack</div>
+                <div className="text-xs text-[#1e3a5f]/50 mt-0.5">Total $1,440 · $1,200</div>
+              </div>
+              <div className="w-28 sm:w-36 text-right">
+                <div className="text-xl font-bold text-[#1e3a5f]">$144</div>
+                <div className="text-xs text-[#7A6A2E]">Save $16/session</div>
+              </div>
+              <div className="w-28 sm:w-36 text-right">
+                <div className="text-xl font-bold text-[#1e3a5f]">$120</div>
+                <div className="text-xs text-[#7A6A2E]">Save $10/session</div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Beginner-friendly packages */}
-        <div className="bg-white rounded-3xl shadow-lg border border-[#e8dcc8] overflow-hidden">
-          {beginnerPackages.map((pkg, i) => (
-            <PackageRow key={pkg.name} pkg={pkg} isLast={i === beginnerPackages.length - 1} />
-          ))}
+        {/* Semi-Private */}
+        <div>
+          <div className="flex items-baseline gap-3 mb-4">
+            <h3 className="text-lg font-bold text-[#1e3a5f]">Semi-Private (2+ people, per person)</h3>
+            <span className="text-xs text-[#1e3a5f]/40 font-semibold uppercase tracking-widest">1 hr only</span>
+          </div>
+          <div className="bg-white rounded-3xl shadow-lg border border-[#e8dcc8] overflow-hidden">
+            {/* Column headers */}
+            <div className="flex px-4 sm:px-7 py-3 border-b border-[#e8dcc8] bg-[#f5f0e8]">
+              <div className="flex-1" />
+              <div className="w-28 sm:w-36 text-right text-xs font-semibold text-[#1e3a5f]/50 uppercase tracking-widest">Per person</div>
+            </div>
+
+            {/* Single */}
+            <div className="flex items-center px-4 sm:px-7 py-4 sm:py-5 border-b border-[#e8dcc8]">
+              <div className="flex-1">
+                <div className="font-semibold text-[#1e3a5f]">Single</div>
+              </div>
+              <div className="w-28 sm:w-36 text-right">
+                <div className="text-xl font-bold text-[#1e3a5f]">$100</div>
+              </div>
+            </div>
+
+            {/* 5-Pack */}
+            <div className="flex items-center px-4 sm:px-7 py-4 sm:py-5 border-b border-[#e8dcc8]">
+              <div className="flex-1">
+                <div className="font-semibold text-[#1e3a5f]">5-Session Pack</div>
+                <div className="text-xs text-[#1e3a5f]/50 mt-0.5">Total $450/person</div>
+              </div>
+              <div className="w-28 sm:w-36 text-right">
+                <div className="text-xl font-bold text-[#1e3a5f]">$90</div>
+                <div className="text-xs text-[#7A6A2E]">Save $10/session</div>
+              </div>
+            </div>
+
+            {/* 10-Pack */}
+            <div className="flex items-center px-4 sm:px-7 py-4 sm:py-5">
+              <div className="flex-1">
+                <div className="font-semibold text-[#1e3a5f]">10-Session Pack</div>
+                <div className="text-xs text-[#1e3a5f]/50 mt-0.5">Total $850/person</div>
+              </div>
+              <div className="w-28 sm:w-36 text-right">
+                <div className="text-xl font-bold text-[#1e3a5f]">$85</div>
+                <div className="text-xs text-[#7A6A2E]">Save $15/session</div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Divider */}
-        <div className="text-center mt-10 mb-6">
-          <span className="text-[#1e3a5f]/40 text-xs font-semibold uppercase tracking-widest">For returning students</span>
-        </div>
-
-        {/* Advanced packages */}
-        <div className="bg-white rounded-3xl shadow-lg border border-[#e8dcc8] overflow-hidden">
-          {advancedPackages.map((pkg, i) => (
-            <PackageRow key={pkg.name} pkg={pkg} isLast={i === advancedPackages.length - 1} />
-          ))}
-        </div>
       </div>
     </section>
   )

@@ -28,7 +28,7 @@ export default function Hero() {
         </h1>
 
         <p className="text-lg sm:text-2xl text-white font-medium mb-4">
-          Golf is for everyone. Start with a free lesson.
+          Golf is for everyone.
         </p>
 
         <p className="text-sm sm:text-base text-white/70 max-w-lg mx-auto mb-6 sm:mb-8 leading-relaxed">
@@ -39,7 +39,7 @@ export default function Hero() {
           href="#booking"
           className="inline-block bg-[#c9a84c] hover:bg-[#b8963e] text-white font-semibold px-8 py-4 rounded-full text-sm sm:text-base transition-all duration-200 shadow-xl hover:shadow-2xl hover:-translate-y-0.5"
         >
-          Book Free Class
+          Book a Lesson
         </a>
 
         {/* Stats */}

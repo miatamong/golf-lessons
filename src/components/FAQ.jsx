@@ -3,7 +3,7 @@ import { useState } from 'react'
 const faqs = [
   {
     q: 'Where do I start?',
-    a: 'New to us? Begin with a free trial class to experience our coaching, then move into an Intro lesson for a full swing assessment.',
+    a: 'Book an Intro 1:1 lesson to get a full swing assessment and understand where to focus your practice.',
   },
   {
     q: "I'm a complete beginner - is that okay?",
@@ -75,7 +75,7 @@ export default function FAQ() {
             href="#booking"
             className="inline-block bg-[#1e3a5f] hover:bg-[#16304f] text-white font-semibold px-8 py-3.5 rounded-full text-sm transition-all duration-200 shadow-lg hover:-translate-y-0.5"
           >
-            Claim Your Free Class
+            Book a Lesson
           </a>
         </div>
       </div>

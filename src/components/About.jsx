@@ -69,6 +69,10 @@ export default function About() {
                 <div className="text-[#c9a84c] font-bold text-sm uppercase tracking-widest mb-3">Achievement</div>
                 <ul className="space-y-3">
                   <li className="flex flex-col">
+                    <span className="text-sm font-semibold text-[#1e3a5f]">PGA of Canada</span>
+                    <span className="text-xs text-[#1e3a5f]/70">Licensed Member</span>
+                  </li>
+                  <li className="pt-2 border-t border-[#e8dcc8] flex flex-col">
                     <span className="text-sm font-semibold text-[#1e3a5f]">Top 10 Individual</span>
                     <span className="text-xs text-[#1e3a5f]/70">PacWest MG Championship</span>
                   </li>
@@ -114,7 +118,7 @@ export default function About() {
             href="#booking"
             className="inline-block bg-[#1e3a5f] hover:bg-[#16304f] text-white font-semibold px-8 py-3.5 rounded-full text-sm transition-all duration-200 shadow-lg hover:-translate-y-0.5"
           >
-            Book a Free Class
+            Book a Lesson
           </a>
         </div>
       </div>

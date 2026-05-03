@@ -24,7 +24,7 @@ export default function App() {
         href="#booking"
         className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 flex sm:hidden items-center gap-2 bg-[#1e3a5f] hover:bg-[#1d4ed8] text-white font-semibold px-6 py-3.5 rounded-full shadow-2xl transition-all duration-200 hover:-translate-y-0.5 active:scale-95"
       >
-        <span>📅</span> Try Free Class
+        <span>📅</span> Book a Lesson
       </a>
     </>
   )

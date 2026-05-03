@@ -80,7 +80,7 @@ export default function Navbar() {
                   : 'bg-[#1e3a5f] hover:bg-[#16304f] text-white border border-white/30'
               }`}
             >
-              Free Trial Class
+              Book a Lesson
             </a>
           </div>
 
@@ -124,7 +124,7 @@ export default function Navbar() {
               onClick={() => setMenuOpen(false)}
               className="mt-2 bg-white text-[#1e3a5f] text-center font-semibold py-3 rounded-full"
             >
-              Free Trial Class
+              Book a Lesson
             </a>
           </div>
         </div>
