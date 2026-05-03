@@ -28,11 +28,11 @@ export default function Hero() {
         </h1>
 
         <p className="text-lg sm:text-2xl text-white font-medium mb-4">
-          Golf is for everyone.
+          Certified PGA of Canada Professional
         </p>
 
         <p className="text-sm sm:text-base text-white/70 max-w-lg mx-auto mb-6 sm:mb-8 leading-relaxed">
-          Complete beginner or occasional player - I will meet you where you are.
+          Playing since Grade 7, competed through high school, and earned a college spot through golf — I know this game from every angle. Whether you're picking up a club for the first time or chasing a roster spot, you're in the right place.
         </p>
 
         <a
