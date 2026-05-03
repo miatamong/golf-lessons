@@ -1,4 +1,10 @@
+import { useLang } from '../LanguageContext'
+import { translations } from '../translations'
+
 export default function Hero() {
+  const { lang } = useLang()
+  const t = translations[lang].hero
+
   return (
     <section
       id="home"
@@ -9,14 +15,10 @@ export default function Hero() {
         className="absolute inset-0 bg-cover bg-bottom bg-no-repeat"
         role="img"
         aria-label="Golf course background"
-        style={{
-          backgroundImage: `url('/images/aesthetic-2.jpg')`,
-        }}
+        style={{ backgroundImage: `url('/images/aesthetic-2.jpg')` }}
       />
-      {/* Dark overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/60" />
 
-      {/* Decorative golf course lines */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#f5f0e8]/10 to-transparent" />
       </div>
@@ -28,27 +30,23 @@ export default function Hero() {
         </h1>
 
         <p className="text-lg sm:text-2xl text-white font-medium mb-4">
-          Certified PGA of Canada Professional
+          {t.tagline}
         </p>
 
         <p className="text-sm sm:text-base text-white/70 max-w-lg mx-auto mb-6 sm:mb-8 leading-relaxed">
-          Playing since Grade 7, competed through high school, and earned a college spot through golf — I know this game from every angle. Whether you're picking up a club for the first time or chasing a roster spot, you're in the right place.
+          {t.bio}
         </p>
 
         <a
           href="#booking"
           className="inline-block bg-[#c9a84c] hover:bg-[#b8963e] text-white font-semibold px-8 py-4 rounded-full text-sm sm:text-base transition-all duration-200 shadow-xl hover:shadow-2xl hover:-translate-y-0.5"
         >
-          Book a Lesson
+          {t.cta}
         </a>
 
         {/* Stats */}
         <div className="mt-10 sm:mt-16 grid grid-cols-3 gap-6 sm:gap-8 max-w-md mx-auto">
-          {[
-            { value: '3+', label: 'Years Teaching' },
-            { value: '25+', label: 'Students Coached' },
-            { value: '10+', label: 'Years in Golf' },
-          ].map((stat) => (
+          {t.stats.map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-4xl sm:text-3xl font-bold text-[#c9a84c]">{stat.value}</div>
               <div className="text-white/80 text-sm sm:text-xs mt-1 tracking-wide">{stat.label}</div>

@@ -1,4 +1,10 @@
+import { useLang } from '../LanguageContext'
+import { translations } from '../translations'
+
 export default function Footer() {
+  const { lang } = useLang()
+  const t = translations[lang].footer
+
   return (
     <footer className="bg-[#0f2440] text-white py-12 pb-24 sm:pb-12 px-4">
       <div className="max-w-7xl mx-auto">
@@ -14,26 +20,16 @@ export default function Footer() {
                 <span className="text-[#c9a84c] text-xs tracking-widest uppercase">Golf Pro</span>
               </div>
             </div>
-            <p className="text-white/50 text-sm leading-relaxed">
-              Anyone • Anywhere • Swing
-            </p>
+            <p className="text-white/50 text-sm leading-relaxed">{t.tagline}</p>
           </div>
 
           {/* Quick links */}
           <div>
-            <h4 className="font-semibold text-[#c9a84c] text-sm uppercase tracking-widest mb-4">Quick Links</h4>
+            <h4 className="font-semibold text-[#c9a84c] text-sm uppercase tracking-widest mb-4">{t.links_title}</h4>
             <ul className="space-y-2">
-              {[
-                ['Home', '#home'],
-                ['About', '#about'],
-                ['Lessons', '#lessons'],
-                ['Booking', '#booking'],
-                ['Contact', '#contact'],
-              ].map(([label, href]) => (
+              {t.links.map(([label, href]) => (
                 <li key={href}>
-                  <a href={href} className="text-white/50 hover:text-white text-sm transition-colors">
-                    {label}
-                  </a>
+                  <a href={href} className="text-white/50 hover:text-white text-sm transition-colors">{label}</a>
                 </li>
               ))}
             </ul>
@@ -41,7 +37,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold text-[#c9a84c] text-sm uppercase tracking-widest mb-4">Contact</h4>
+            <h4 className="font-semibold text-[#c9a84c] text-sm uppercase tracking-widest mb-4">{t.contact_title}</h4>
             <ul className="space-y-2 text-sm text-white/50">
               <li>slowfastmedium@gmail.com</li>
               <li>778-988-9921</li>
@@ -67,7 +63,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-white/50">
           <span>© {new Date().getFullYear()} Willis Lee Golf. All rights reserved.</span>
-          <span>Private Golf Instructor</span>
+          <span>{t.role}</span>
         </div>
       </div>
     </footer>
