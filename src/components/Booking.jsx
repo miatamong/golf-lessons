@@ -10,9 +10,6 @@ export default function Booking() {
           <p className="mt-4 text-[#1e3a5f]/80 max-w-lg mx-auto text-sm">
             Pick a time and get started.
           </p>
-          <p className="mt-2 text-[#c9a84c] font-semibold text-sm">
-            Spring schedule now open · Limited spots available this week
-          </p>
         </div>
 
         {/* Iframe card */}

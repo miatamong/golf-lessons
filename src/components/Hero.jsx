@@ -32,7 +32,7 @@ export default function Hero() {
         </p>
 
         <p className="text-sm sm:text-base text-white/70 max-w-lg mx-auto mb-6 sm:mb-8 leading-relaxed">
-          Complete beginner or occasional player - I will meet you where you are, in Surrey or at your home course.
+          Complete beginner or occasional player - I will meet you where you are.
         </p>
 
         <a

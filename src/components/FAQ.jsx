@@ -11,7 +11,7 @@ const faqs = [
   },
   {
     q: 'Where are lessons held?',
-    a: 'Putting lessons are held in Surrey, BC. All other sessions can be arranged at your home course upon request.',
+    a: 'Please refer to the price information above.',
   },
   {
     q: 'How long is a session?',

@@ -45,7 +45,6 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-white/50">
               <li>slowfastmedium@gmail.com</li>
               <li>778-988-9921</li>
-              <li>Surrey, BC</li>
             </ul>
             <div className="flex gap-3 mt-4">
               {[
@@ -68,7 +67,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-white/50">
           <span>© {new Date().getFullYear()} Willis Lee Golf. All rights reserved.</span>
-          <span>Private Golf Instructor · Surrey, BC</span>
+          <span>Private Golf Instructor</span>
         </div>
       </div>
     </footer>
