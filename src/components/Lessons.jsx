@@ -8,9 +8,11 @@ export default function Lessons() {
           <span className="text-[#7A6A2E] text-sm font-semibold tracking-widest uppercase">Lesson Packages</span>
           <h2 className="mt-2 text-4xl sm:text-5xl font-bold text-[#1e3a5f]">Lessons & Pricing</h2>
           <div className="mt-4 w-16 h-1 bg-[#c9a84c] mx-auto rounded-full" />
-          <p className="mt-6 text-[#1e3a5f]/80">
-            All sessions held in <strong className="text-[#1e3a5f]">Surrey, BC</strong>.
-          </p>
+          <div className="mt-6 text-left inline-block text-sm text-[#1e3a5f]/80 space-y-1">
+            <p>Pricing is for <strong className="text-[#1e3a5f]">Swan-E-Set (Golf Mecca)</strong></p>
+            <p className="text-[#1e3a5f]/60">16651 Rannie Rd, Pitt Meadows, BC V3Y 1Z1</p>
+            <p>45 min · 60 min · 1:1 · 1:2+ — <span className="text-[#7A6A2E] font-semibold">DM for specific day inquiry</span></p>
+          </div>
         </div>
 
         {/* Private (1:1) */}
