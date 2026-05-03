@@ -39,7 +39,6 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-[#c9a84c] text-sm uppercase tracking-widest mb-4">{t.contact_title}</h4>
             <ul className="space-y-2 text-sm text-white/50">
-              <li>slowfastmedium@gmail.com</li>
               <li>778-988-9921</li>
             </ul>
             <div className="flex gap-3 mt-4">
