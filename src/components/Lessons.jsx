@@ -17,10 +17,9 @@ export default function Lessons() {
           <div className="mt-6 text-left inline-block text-sm text-[#1e3a5f]/80 space-y-1">
             <p>Pricing is for <strong className="text-[#1e3a5f]">Swan-E-Set (Golf Mecca)</strong></p>
             <p className="text-[#1e3a5f]/60">{t.address}</p>
-            <p>{t.inquiry.split('DM')[0]}
-              <span className="text-[#7A6A2E] font-semibold">
-                {lang === 'ko' ? '날짜 문의는 DM으로' : 'DM for specific day inquiry'}
-              </span>
+            <p>
+              {t.inquiry.split(t.inquiryHighlight)[0]}
+              <span className="text-[#7A6A2E] font-semibold">{t.inquiryHighlight}</span>
             </p>
           </div>
         </div>
