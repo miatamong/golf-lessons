@@ -18,7 +18,7 @@ export default function Lessons() {
             <p>Pricing is for <strong className="text-[#1e3a5f]">Swan-E-Set (Golf Mecca)</strong></p>
             <p className="text-[#1e3a5f]/60">{t.address}</p>
             <a
-              href="https://maps.google.com/?q=16651+Rannie+Rd,+Pitt+Meadows,+BC+V3Y+1Z1"
+              href="https://maps.app.goo.gl/tmfLRiHjkzKEDNyR7"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-[#7A6A2E] font-semibold hover:underline"
