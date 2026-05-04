@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { useLang } from '../LanguageContext'
 import { translations } from '../translations'
 
@@ -72,6 +73,14 @@ export default function Hero() {
   const { lang } = useLang()
   const t = translations[lang].hero
   const firstPara = t.bio.split('\n\n')[0]
+  const [shotKey, setShotKey] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShotKey(k => k + 1)
+    }, 6800) // 1.8s animation + 5s pause
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <section
@@ -88,8 +97,8 @@ export default function Hero() {
 
       <div className="relative z-10 text-center px-4 max-w-2xl mx-auto flex flex-col items-center">
 
-        {/* Golf shot animation */}
-        <GolfShotScene />
+        {/* Golf shot animation — replays every 6.8s */}
+        <GolfShotScene key={shotKey} />
 
         {/* Willis Lee — appears after ball lands */}
         <h1 className="hero-name text-6xl sm:text-8xl text-white leading-none mb-5">
