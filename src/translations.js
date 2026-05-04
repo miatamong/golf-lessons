@@ -2,7 +2,7 @@ export const translations = {
   ko: {
     navbar: {
       home: '홈',
-      lessons: '레슨 가격 안내',
+      lessons: '레슨 가격',
       about: '프로 소개',
       faq: '자주 묻는 질문',
       contact: '문의하기',
@@ -129,7 +129,7 @@ export const translations = {
       links: [
         ['홈', '#home'],
         ['프로 소개', '#about'],
-        ['레슨 가격 안내', '#lessons'],
+        ['레슨 가격', '#lessons'],
         ['레슨 예약하기', '#booking'],
         ['문의하기', '#contact'],
       ],
