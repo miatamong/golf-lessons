@@ -41,7 +41,7 @@ const GolfShotScene = () => (
           dur="1.0s" begin="0s" fill="freeze" />
         <animateMotion
           path="M70,103 Q258,-8 433,111"
-          dur="1.0s"
+          dur="0.8s"
           begin="0s"
           fill="freeze"
         />
