@@ -1,9 +1,18 @@
+import { useEffect } from 'react'
 import { useLang } from '../LanguageContext'
 import { translations } from '../translations'
 
 export default function Contact() {
   const { lang } = useLang()
   const t = translations[lang].contact
+
+  useEffect(() => {
+    if (document.querySelector('script[src="https://w.behold.so/widget.js"]')) return
+    const s = document.createElement('script')
+    s.type = 'module'
+    s.src = 'https://w.behold.so/widget.js'
+    document.head.append(s)
+  }, [])
 
   const items = [
     {
@@ -49,7 +58,7 @@ export default function Contact() {
               <div className="text-white/60 text-xs font-medium uppercase tracking-wide mb-3">Follow Willis</div>
               <div className="flex gap-3">
                 {[
-                  { name: 'Instagram', href: 'https://instagram.com/willisleegolf' },
+                  { name: 'Instagram', href: 'https://instagram.com/willisgolflee' },
                   { name: 'KakaoTalk', href: 'https://open.kakao.com/o/s8THCgni' },
                 ].map((s) => (
                   <a
@@ -66,6 +75,15 @@ export default function Contact() {
             </div>
           </div>
         </div>
+
+        {/* Instagram Feed */}
+        <div className="mt-16">
+          <div className="text-center mb-6">
+            <span className="text-white/50 text-xs font-semibold uppercase tracking-widest">@willisgolflee</span>
+          </div>
+          <behold-widget feed-id="3AtyjX0tzQvTy9882XvS"></behold-widget>
+        </div>
+
       </div>
     </section>
   )
