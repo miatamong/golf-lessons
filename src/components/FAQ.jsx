@@ -22,7 +22,7 @@ export default function FAQ() {
               <button
                 onClick={() => setOpen(open === i ? null : i)}
                 aria-expanded={open === i}
-                className={`w-full flex items-center justify-between gap-4 px-6 py-5 text-left transition-colors duration-150 ${
+                className={`w-full flex items-center justify-between gap-3 px-4 sm:px-6 py-4 sm:py-5 text-left transition-colors duration-150 ${
                   open === i ? 'bg-[#1e3a5f]' : 'bg-[#f5f0e8] hover:bg-[#e8dcc8]'
                 }`}
               >
@@ -39,7 +39,7 @@ export default function FAQ() {
                 </span>
               </button>
               {open === i && (
-                <div className="bg-[#f5f0e8] px-6 py-5 text-sm leading-relaxed text-[#1e3a5f]/80">
+                <div className="bg-[#f5f0e8] px-4 sm:px-6 py-4 sm:py-5 text-sm leading-relaxed text-[#1e3a5f]/80">
                   <span className="font-bold text-[#1e3a5f] mr-2">A.</span>
                   {item.a}
                 </div>

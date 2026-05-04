@@ -1,6 +1,33 @@
 import { useLang } from '../LanguageContext'
 import { translations } from '../translations'
 
+const LETTERS = 'Willis Lee'.split('')
+const LETTER_DELAY = 0.1 // seconds between each letter
+
+const AnimatedName = () => (
+  <h1 className="hero-name text-6xl sm:text-8xl text-white leading-none">
+    {'Willis'.split('').map((char, i) => (
+      <span
+        key={i}
+        className="letter"
+        style={{ animationDelay: `${i * LETTER_DELAY}s` }}
+      >
+        {char}
+      </span>
+    ))}
+    {' '}
+    {'Lee'.split('').map((char, i) => (
+      <span
+        key={i}
+        className="letter text-[#c9a84c]"
+        style={{ animationDelay: `${(6 + 1 + i) * LETTER_DELAY}s` }}
+      >
+        {char}
+      </span>
+    ))}
+  </h1>
+)
+
 const GolfClub = () => (
   <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
     {/* Grip */}
@@ -43,11 +70,9 @@ export default function Hero() {
           </span>
         </div>
 
-        {/* Name — golf club writing animation */}
+        {/* Name — letter by letter writing animation */}
         <div className="relative inline-block mb-5">
-          <h1 className="hero-name text-6xl sm:text-8xl text-white leading-none">
-            Willis <span className="text-[#c9a84c]">Lee</span>
-          </h1>
+          <AnimatedName />
           <div className="golf-club-cursor">
             <GolfClub />
           </div>

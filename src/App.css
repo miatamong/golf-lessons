@@ -20,11 +20,23 @@
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Willis Lee — cursive write reveal */
+/* Willis Lee — per-letter reveal */
 .hero-name {
   font-family: 'Great Vibes', cursive;
-  clip-path: inset(0 100% 0 0);
-  animation: writeReveal 2.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.hero-name .letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(10px) scaleX(0.8);
+  transform-origin: left center;
+  animation: letterPop 0.12s ease forwards;
+}
+
+@keyframes letterPop {
+  0%   { opacity: 0; transform: translateY(10px) scaleX(0.8); }
+  60%  { opacity: 1; transform: translateY(-3px) scaleX(1.05); }
+  100% { opacity: 1; transform: translateY(0) scaleX(1); }
 }
 
 /* Golf club cursor */
@@ -45,20 +57,20 @@
 
 .hero-bio {
   opacity: 0;
-  animation: fadeInUp 0.7s ease 2.4s forwards;
+  animation: fadeInUp 0.5s ease 1.2s forwards;
 }
 
 .hero-cta {
   opacity: 0;
-  animation: fadeInUp 0.7s ease 2.7s forwards;
+  animation: fadeInUp 0.5s ease 1.5s forwards;
 }
 
 .hero-stats {
   opacity: 0;
-  animation: fadeInUp 0.7s ease 3.0s forwards;
+  animation: fadeInUp 0.5s ease 1.7s forwards;
 }
 
 .hero-scroll {
   opacity: 0;
-  animation: fadeInUp 0.7s ease 3.3s forwards;
+  animation: fadeInUp 0.5s ease 1.9s forwards;
 }
