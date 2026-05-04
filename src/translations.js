@@ -6,7 +6,7 @@ export const translations = {
       about: '소개',
       faq: 'FAQ',
       contact: '문의',
-      cta: '레슨 예약',
+      cta: '레슨 예약하기',
     },
     hero: {
       tagline: 'PGA of Canada 공인 프로',
@@ -135,7 +135,7 @@ export const translations = {
       ],
       role: '개인 골프 강사',
     },
-    mobile_cta: '레슨 예약',
+    mobile_cta: '레슨 예약하기',
   },
   en: {
     navbar: {

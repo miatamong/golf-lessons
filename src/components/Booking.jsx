@@ -26,21 +26,6 @@ export default function Booking() {
           />
         </div>
 
-        {/* Steps */}
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center text-sm text-[#1e3a5f]/70">
-          <div>
-            <span className="block text-[#c9a84c] font-bold text-base mb-1">{t.step1_title}</span>
-            {t.step1_desc}
-          </div>
-          <div>
-            <span className="block text-[#c9a84c] font-bold text-base mb-1">{t.step2_title}</span>
-            {t.step2_desc}
-          </div>
-          <div>
-            <span className="block text-[#c9a84c] font-bold text-base mb-1">{t.step3_title}</span>
-            {t.step3_desc}
-          </div>
-        </div>
       </div>
     </section>
   )
