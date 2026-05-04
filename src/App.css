@@ -12,9 +12,9 @@
 
 /* Golf swing — impact through follow-through only */
 @keyframes golfSwing {
-  0%   { transform: rotate(-22deg); }
-  45%  { transform: rotate(6deg);   }
-  100% { transform: rotate(58deg);  }
+  0%   { transform: rotate(15deg);  }  /* head left of ball */
+  45%  { transform: rotate(-2deg);  }  /* impact */
+  100% { transform: rotate(-52deg); }  /* follow-through, head right+up */
 }
 
 .golf-club-swing {
