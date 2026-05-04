@@ -58,7 +58,7 @@ export default function Contact() {
               <div className="text-white/60 text-xs font-medium uppercase tracking-wide mb-3">Follow Willis</div>
               <div className="flex gap-3">
                 {[
-                  { name: 'Instagram', href: 'https://instagram.com/willisgolflee' },
+                  { name: 'Instagram', href: 'https://instagram.com/willisleegolf' },
                   { name: 'KakaoTalk', href: 'https://open.kakao.com/o/s8THCgni' },
                 ].map((s) => (
                   <a
@@ -79,7 +79,7 @@ export default function Contact() {
         {/* Instagram Feed */}
         <div className="mt-16">
           <div className="text-center mb-6">
-            <span className="text-white/50 text-xs font-semibold uppercase tracking-widest">@willisgolflee</span>
+            <span className="text-white/50 text-xs font-semibold uppercase tracking-widest">@willisleegolf</span>
           </div>
           <behold-widget feed-id="3AtyjX0tzQvTy9882XvS"></behold-widget>
         </div>
