@@ -14,7 +14,20 @@ export default function Lessons() {
           <span className="text-[#7A6A2E] text-sm font-semibold tracking-widest uppercase">{t.subtitle}</span>
           <h2 className="mt-2 text-4xl sm:text-5xl font-bold text-[#1e3a5f]">{t.title}</h2>
           <div className="mt-4 w-16 h-1 bg-[#c9a84c] mx-auto rounded-full" />
-          <div className="mt-6 text-left inline-block text-sm text-[#1e3a5f]/80 space-y-2">
+          {/* Venue photos */}
+          <div className="mt-6 grid grid-cols-3 gap-2 sm:gap-3 mb-6">
+            {['swaneset-1.jpg', 'swaneset-2.jpg', 'swaneset-3.jpg'].map((img, i) => (
+              <img
+                key={i}
+                src={`/images/${img}`}
+                alt={`Swan-E-Set Golf Course ${i + 1}`}
+                loading="lazy"
+                className="rounded-xl w-full object-cover aspect-[4/3] shadow-md"
+              />
+            ))}
+          </div>
+
+          <div className="text-left inline-block text-sm text-[#1e3a5f]/80 space-y-2">
             <p>Pricing is for <strong className="text-[#1e3a5f]">Swan-E-Set (Golf Mecca)</strong></p>
             <p className="text-[#1e3a5f]/60">{t.address}</p>
             <a
