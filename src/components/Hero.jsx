@@ -90,14 +90,6 @@ export default function Hero() {
 
       <div className="relative z-10 text-center px-4 max-w-2xl mx-auto flex flex-col items-center">
 
-        {/* PGA Badge */}
-        <div className="hero-badge inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-[#c9a84c]/50 rounded-full px-4 py-1.5 mb-6">
-          <div className="w-1.5 h-1.5 bg-[#c9a84c] rounded-full" />
-          <span className="text-[#c9a84c] text-xs font-semibold tracking-widest uppercase">
-            {t.tagline}
-          </span>
-        </div>
-
         {/* Golf shot animation */}
         <GolfShotScene />
 
