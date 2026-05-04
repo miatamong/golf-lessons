@@ -33,9 +33,11 @@ export default function Hero() {
           {t.tagline}
         </p>
 
-        <p className="text-sm sm:text-base text-white/70 max-w-lg mx-auto mb-6 sm:mb-8 leading-relaxed">
-          {t.bio}
-        </p>
+        <div className="text-sm sm:text-base text-white/70 max-w-lg mx-auto mb-6 sm:mb-8 leading-relaxed space-y-3">
+          {t.bio.split('\n\n').map((para, i) => (
+            <p key={i}>{para}</p>
+          ))}
+        </div>
 
         <a
           href="#booking"
