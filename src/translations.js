@@ -2,10 +2,10 @@ export const translations = {
   ko: {
     navbar: {
       home: '홈',
-      lessons: '레슨',
-      about: '소개',
-      faq: 'FAQ',
-      contact: '문의',
+      lessons: '레슨 가격 안내',
+      about: '강사 소개',
+      faq: '자주 묻는 질문',
+      contact: '문의하기',
       cta: '레슨 예약하기',
     },
     hero: {
