@@ -5,72 +5,71 @@
 
 /* ── Hero animations ── */
 
-@keyframes writeReveal {
-  0%   { clip-path: inset(0 100% 0 0); }
-  100% { clip-path: inset(0 0% 0 0); }
-}
-
-@keyframes clubSlide {
-  0%   { left: 0%; }
-  100% { left: 100%; }
-}
-
 @keyframes fadeInUp {
   0%   { opacity: 0; transform: translateY(14px); }
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Willis Lee — per-letter reveal */
-.hero-name {
-  font-family: 'Great Vibes', cursive;
+@keyframes rippleFade {
+  from { transform: scale(0); opacity: 0.9; }
+  to   { transform: scale(2.8); opacity: 0; }
 }
 
-.hero-name .letter {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(10px) scaleX(0.8);
-  transform-origin: left center;
-  animation: letterPop 0.12s ease forwards;
+@keyframes nameReveal {
+  from { opacity: 0; transform: translateY(20px); filter: blur(6px); }
+  to   { opacity: 1; transform: translateY(0); filter: blur(0); }
 }
 
-@keyframes letterPop {
-  0%   { opacity: 0; transform: translateY(10px) scaleX(0.8); }
-  60%  { opacity: 1; transform: translateY(-3px) scaleX(1.05); }
-  100% { opacity: 1; transform: translateY(0) scaleX(1); }
+@keyframes flagWave {
+  0%, 100% { transform: skewX(0deg); }
+  50%       { transform: skewX(6deg); }
 }
 
-/* Golf club cursor */
-.golf-club-cursor {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-60%);
-  left: 0%;
-  animation: clubSlide 2.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  pointer-events: none;
-}
-
-/* Staggered fade-ins after writing */
+/* PGA badge */
 .hero-badge {
   opacity: 0;
-  animation: fadeInUp 0.7s ease 0.3s forwards;
+  animation: fadeInUp 0.5s ease 0.1s forwards;
 }
 
+/* Golf club swing — via SVG animateTransform */
+
+/* Hole ripple */
+.hole-ripple {
+  transform: scale(0);
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: rippleFade 0.55s ease-out 1.9s forwards;
+}
+
+/* Flag gentle wave after ball lands */
+.flag-anim {
+  transform-box: fill-box;
+  transform-origin: left center;
+  animation: flagWave 0.5s ease-in-out 1.95s 3;
+}
+
+/* Willis Lee name */
+.hero-name {
+  font-family: 'Great Vibes', cursive;
+  opacity: 0;
+  animation: nameReveal 0.9s cubic-bezier(0.2, 0, 0, 1) 2.4s forwards;
+}
+
+/* Staggered content after name */
 .hero-bio {
   opacity: 0;
-  animation: fadeInUp 0.5s ease 1.2s forwards;
+  animation: fadeInUp 0.5s ease 3.2s forwards;
 }
-
 .hero-cta {
   opacity: 0;
-  animation: fadeInUp 0.5s ease 1.5s forwards;
+  animation: fadeInUp 0.5s ease 3.5s forwards;
 }
-
 .hero-stats {
   opacity: 0;
-  animation: fadeInUp 0.5s ease 1.7s forwards;
+  animation: fadeInUp 0.5s ease 3.7s forwards;
 }
-
 .hero-scroll {
   opacity: 0;
-  animation: fadeInUp 0.5s ease 1.9s forwards;
+  animation: fadeInUp 0.5s ease 3.9s forwards;
 }
