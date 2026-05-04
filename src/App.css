@@ -10,28 +10,16 @@
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Golf swing — backswing → impact → follow-through */
+/* Golf swing — impact through follow-through only */
 @keyframes golfSwing {
-  0%   {
-    transform: rotate(0deg);
-    animation-timing-function: ease-in;
-  }
-  30%  {
-    transform: rotate(-72deg);
-    animation-timing-function: cubic-bezier(0.4, 0, 0.1, 1);
-  }
-  62%  {
-    transform: rotate(4deg);
-    animation-timing-function: ease-out;
-  }
-  100% {
-    transform: rotate(55deg);
-  }
+  0%   { transform: rotate(-22deg); }
+  45%  { transform: rotate(6deg);   }
+  100% { transform: rotate(58deg);  }
 }
 
 .golf-club-swing {
   transform-origin: 48px 68px;
-  animation: golfSwing 0.78s 0.2s forwards;
+  animation: golfSwing 0.45s cubic-bezier(0.4, 0, 0.2, 1) 0.1s forwards;
 }
 
 /* Hole ripple */
@@ -45,7 +33,7 @@
   transform-origin: center;
   transform: scale(0);
   opacity: 0;
-  animation: rippleFade 0.55s ease-out 1.95s forwards;
+  animation: rippleFade 0.55s ease-out 1.62s forwards;
 }
 
 /* Flag wave */
@@ -57,7 +45,7 @@
 .flag-anim {
   transform-box: fill-box;
   transform-origin: left center;
-  animation: flagWave 0.45s ease-in-out 2.0s 3;
+  animation: flagWave 0.45s ease-in-out 1.67s 3;
 }
 
 /* Willis Lee name */
@@ -71,7 +59,7 @@
   font-weight: 900;
   letter-spacing: -0.02em;
   opacity: 0;
-  animation: nameReveal 0.85s cubic-bezier(0.2, 0, 0, 1) 2.35s forwards;
+  animation: nameReveal 0.85s cubic-bezier(0.2, 0, 0, 1) 2.05s forwards;
 }
 
 /* Staggered content */

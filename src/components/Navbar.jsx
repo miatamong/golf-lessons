@@ -52,7 +52,7 @@ export default function Navbar() {
             </div>
             <div>
               <span className="text-white font-bold text-lg leading-tight block">Willis Lee</span>
-              <span className="text-[#c9a84c] text-[10px] tracking-widest uppercase">PGA of Canada 공인 프로</span>
+              <span className="text-[#c9a84c] text-[10px] tracking-widest uppercase">PGA of Canada Certified Pro</span>
             </div>
           </a>
 

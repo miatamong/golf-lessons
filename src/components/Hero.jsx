@@ -30,19 +30,19 @@ const GolfShotScene = () => (
       {/* Ball on tee — disappears at impact */}
       <circle cx="70" cy="103" r="5.5" fill="white" opacity="0.92">
         <animate attributeName="opacity"
-          values="0.92;0" dur="0.05s" begin="0.66s" fill="freeze" />
+          values="0.92;0" dur="0.05s" begin="0.30s" fill="freeze" />
       </circle>
 
       {/* Flying ball — starts hidden, follows arc */}
       <circle cx="0" cy="0" r="5.5" fill="white" opacity="0">
         <animate attributeName="opacity"
           values="0;0.95;0.95;0"
-          keyTimes="0;0.03;0.88;1"
-          dur="1.35s" begin="0.66s" fill="freeze" />
+          keyTimes="0;0.02;0.88;1"
+          dur="1.35s" begin="0.30s" fill="freeze" />
         <animateMotion
           path="M70,103 Q258,-8 433,111"
           dur="1.35s"
-          begin="0.66s"
+          begin="0.30s"
           fill="freeze"
           calcMode="spline"
           keySplines="0.35 0 0.55 1"
