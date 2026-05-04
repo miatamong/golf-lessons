@@ -27,22 +27,22 @@ const GolfShotScene = () => (
         <rect x="62" y="114" width="18" height="3" rx="1" fill="#b8963e" />
       </g>
 
-      {/* Ball on tee — disappears at impact */}
+      {/* Ball on tee — disappears just before swing */}
       <circle cx="70" cy="103" r="5.5" fill="white" opacity="0.92">
         <animate attributeName="opacity"
-          values="0.92;0" dur="0.05s" begin="0.05s" fill="freeze" />
+          values="0.92;0" dur="0.05s" begin="0s" fill="freeze" />
       </circle>
 
-      {/* Flying ball — launches with swing */}
+      {/* Flying ball — launches 80ms before swing */}
       <circle cx="0" cy="0" r="5.5" fill="white" opacity="0">
         <animate attributeName="opacity"
           values="0;1;1;0"
           keyTimes="0;0.01;0.85;1"
-          dur="1.0s" begin="0.05s" fill="freeze" />
+          dur="1.0s" begin="0s" fill="freeze" />
         <animateMotion
           path="M70,103 Q258,-8 433,111"
           dur="1.0s"
-          begin="0.05s"
+          begin="0s"
           fill="freeze"
         />
       </circle>
