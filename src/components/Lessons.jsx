@@ -14,13 +14,21 @@ export default function Lessons() {
           <span className="text-[#7A6A2E] text-sm font-semibold tracking-widest uppercase">{t.subtitle}</span>
           <h2 className="mt-2 text-4xl sm:text-5xl font-bold text-[#1e3a5f]">{t.title}</h2>
           <div className="mt-4 w-16 h-1 bg-[#c9a84c] mx-auto rounded-full" />
-          <div className="mt-6 text-left inline-block text-sm text-[#1e3a5f]/80 space-y-1">
+          <div className="mt-6 text-left inline-block text-sm text-[#1e3a5f]/80 space-y-2">
             <p>Pricing is for <strong className="text-[#1e3a5f]">Swan-E-Set (Golf Mecca)</strong></p>
             <p className="text-[#1e3a5f]/60">{t.address}</p>
-            <p>
-              {t.inquiry.split(t.inquiryHighlight)[0]}
-              <span className="text-[#7A6A2E] font-semibold">{t.inquiryHighlight}</span>
-            </p>
+            <a
+              href="https://maps.google.com/?q=16651+Rannie+Rd,+Pitt+Meadows,+BC+V3Y+1Z1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-[#7A6A2E] font-semibold hover:underline"
+            >
+              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              {lang === 'ko' ? '구글맵으로 보기' : 'View on Google Maps'}
+            </a>
           </div>
         </div>
 
