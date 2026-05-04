@@ -62,7 +62,6 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-white/50">
           <span>© {new Date().getFullYear()} Willis Lee Golf. All rights reserved.</span>
-          <span>{t.role}</span>
         </div>
       </div>
     </footer>
