@@ -103,14 +103,6 @@ export default function Hero() {
           {firstPara}
         </p>
 
-        {/* CTA */}
-        <a
-          href="#booking"
-          className="hero-cta inline-block bg-[#c9a84c] hover:bg-[#b8963e] text-white font-semibold px-9 py-4 rounded-full text-sm sm:text-base transition-all duration-200 shadow-xl hover:shadow-2xl hover:-translate-y-0.5"
-        >
-          {t.cta}
-        </a>
-
         {/* Stats */}
         <div className="hero-stats mt-8 w-full max-w-sm bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-4 sm:px-6 py-4 sm:py-5 grid grid-cols-3 gap-4">
           {t.stats.map((stat) => (
