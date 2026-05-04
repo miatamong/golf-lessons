@@ -15,16 +15,19 @@ export default function Lessons() {
           <h2 className="mt-2 text-4xl sm:text-5xl font-bold text-[#1e3a5f]">{t.title}</h2>
           <div className="mt-4 w-16 h-1 bg-[#c9a84c] mx-auto rounded-full" />
           {/* Venue photos */}
-          <div className="mt-6 grid grid-cols-3 gap-2 sm:gap-3 mb-6">
-            {['swaneset-1.jpg', 'swaneset-2.jpg', 'swaneset-3.jpg'].map((img, i) => (
-              <img
-                key={i}
-                src={`/images/${img}`}
-                alt={`Swan-E-Set Golf Course ${i + 1}`}
-                loading="lazy"
-                className="rounded-xl w-full object-cover aspect-[4/3] shadow-md"
-              />
-            ))}
+          <div className="mt-6 grid grid-cols-2 gap-2 sm:gap-3 mb-6">
+            <img
+              src="/images/swaneset-3.jpg"
+              alt="Swan-E-Set Golf Course"
+              loading="lazy"
+              className="rounded-xl w-full object-cover aspect-[4/3] shadow-md"
+            />
+            <img
+              src="/images/swaneset-1.jpg"
+              alt="Swan-E-Set Driving Range"
+              loading="lazy"
+              className="rounded-xl w-full object-cover aspect-[4/3] shadow-md"
+            />
           </div>
 
           <div className="text-left inline-block text-sm text-[#1e3a5f]/80 space-y-2">
