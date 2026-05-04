@@ -1,3 +1,4 @@
+import './App.css'
 import { LanguageProvider } from './LanguageContext'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
