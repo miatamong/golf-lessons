@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import ContactButtons from './ContactButtons'
 import { useLang } from '../i18n.jsx'
 import { CONTACT, LOCATIONS } from '../contact'
@@ -5,6 +6,15 @@ import { CONTACT, LOCATIONS } from '../contact'
 export default function Contact() {
   const { t } = useLang()
   const C = t.contact
+
+  // Instagram feed widget (Behold)
+  useEffect(() => {
+    if (document.querySelector('script[src="https://w.behold.so/widget.js"]')) return
+    const s = document.createElement('script')
+    s.type = 'module'
+    s.src = 'https://w.behold.so/widget.js'
+    document.head.append(s)
+  }, [])
 
   const infoItems = [
     {
@@ -94,6 +104,14 @@ export default function Contact() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Instagram Feed */}
+        <div className="mt-16 max-w-2xl mx-auto">
+          <div className="text-center mb-6">
+            <span className="text-white/50 text-xs font-semibold uppercase tracking-widest">@willisleegolf</span>
+          </div>
+          <behold-widget feed-id="3AtyjX0tzQvTy9882XvS"></behold-widget>
         </div>
       </div>
     </section>

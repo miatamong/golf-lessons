@@ -1,27 +1,76 @@
+import { useState, useEffect } from 'react'
 import { useLang } from '../i18n.jsx'
 import { CONTACT } from '../contact'
+
+function GolfShotScene() {
+  return (
+    <div className="w-full max-w-lg mx-auto">
+      <svg viewBox="0 0 500 130" className="w-full" style={{ overflow: 'visible' }}>
+        {/* Ground */}
+        <line x1="20" y1="112" x2="480" y2="112" stroke="rgba(255,255,255,0.15)" strokeWidth="1" />
+        {/* Tee */}
+        <line x1="70" y1="112" x2="70" y2="104" stroke="rgba(255,255,255,0.55)" strokeWidth="2" />
+        <line x1="64" y1="104" x2="76" y2="104" stroke="rgba(255,255,255,0.55)" strokeWidth="2" />
+        {/* Golf Club — pivot at grip (48, 68) */}
+        <g className="golf-club-swing">
+          <circle cx="48" cy="68" r="3.5" fill="rgba(255,255,255,0.55)" />
+          <line x1="48" y1="68" x2="70" y2="112" stroke="rgba(255,255,255,0.88)" strokeWidth="2.5" strokeLinecap="round" />
+          <rect x="62" y="108" width="18" height="7" rx="1.5" fill="#c9a84c" />
+          <rect x="62" y="114" width="18" height="3" rx="1" fill="#b8963e" />
+        </g>
+        {/* Ball on tee — disappears just before swing */}
+        <circle cx="70" cy="103" r="5.5" fill="white" opacity="0.92">
+          <animate attributeName="opacity" values="0.92;0" dur="0.05s" begin="0s" fill="freeze" />
+        </circle>
+        {/* Flying ball */}
+        <circle cx="0" cy="0" r="5.5" fill="white" opacity="0">
+          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.01;0.85;1" dur="1.0s" begin="0s" fill="freeze" />
+          <animateMotion path="M70,103 Q258,-8 433,111" dur="0.8s" begin="0s" fill="freeze" />
+        </circle>
+        {/* Hole */}
+        <ellipse cx="435" cy="114" rx="12" ry="5" fill="rgba(0,0,0,0.88)" />
+        {/* Flag pole */}
+        <line x1="435" y1="114" x2="435" y2="68" stroke="rgba(255,255,255,0.72)" strokeWidth="1.5" />
+        {/* Flag */}
+        <polygon className="flag-anim" points="435,68 463,78 435,88" fill="#c9a84c" />
+        {/* Ripple on landing */}
+        <circle className="hole-ripple" cx="435" cy="114" r="14" fill="none" stroke="#c9a84c" strokeWidth="2.5" />
+      </svg>
+    </div>
+  )
+}
 
 export default function Hero() {
   const { t } = useLang()
   const journey = t.hero.journey
+  const [shotKey, setShotKey] = useState(0)
+
+  useEffect(() => {
+    const id = setInterval(() => setShotKey((k) => k + 1), 6800)
+    return () => clearInterval(id)
+  }, [])
 
   return (
     <section id="home" className="relative">
       <div className="grid md:grid-cols-2 md:min-h-screen">
-        {/* Photo (top on mobile, right on desktop) */}
-        <div className="order-1 md:order-2 relative h-72 sm:h-96 md:h-auto">
+        {/* Photo + swing animation (top on mobile, right on desktop) */}
+        <div className="order-1 md:order-2 relative overflow-hidden min-h-[18rem] sm:min-h-[24rem] md:min-h-0">
           <img
             src="/images/aesthetic-3.jpg"
             alt="Willis Lee golf swing"
             className="absolute inset-0 w-full h-full object-cover object-center"
           />
+          {/* darken bottom for animation legibility + blend to navy */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1e3a5f] via-black/25 to-black/35" />
           {/* top darken for navbar readability */}
           <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/45 to-transparent" />
-          {/* subtle blend into the navy panel on desktop */}
-          <div className="hidden md:block absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#1e3a5f] to-transparent" />
+          {/* swing animation overlaid near the bottom */}
+          <div className="absolute inset-x-0 bottom-8 px-6">
+            <GolfShotScene key={shotKey} />
+          </div>
         </div>
 
-        {/* Text (below photo on mobile, left on desktop) */}
+        {/* Text (below animation on mobile, left on desktop) */}
         <div className="order-2 md:order-1 bg-[#1e3a5f] flex items-center px-6 sm:px-10 lg:px-16 py-12 md:py-0">
           <div className="max-w-lg mx-auto md:mx-0 w-full">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
