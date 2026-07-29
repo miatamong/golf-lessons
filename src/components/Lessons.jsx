@@ -216,7 +216,7 @@ export default function Lessons() {
   const { t } = useLang()
   const L = t.lessons
   const P = L.pricing
-  const [course, setCourse] = useState('swaneset')
+  const [course, setCourse] = useState('westwood')
 
   const selectedCourse = COURSES.find((c) => c.id === course)
   const data = PRICING[course]

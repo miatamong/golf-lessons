@@ -1,7 +1,7 @@
 // 골프장 위치 (한 곳에서 관리 - Lessons/Contact/Footer 공용)
 export const LOCATIONS = [
-  { id: 'swaneset', name: 'Swan-e-Set', academy: 'Golf Mecca', city: 'Pitt Meadows, BC', address: '16651 Rannie Rd, Pitt Meadows, BC V3Y 1Z1', image: '/images/swaneset.jpeg' },
   { id: 'westwood', name: 'Westwood Plateau', academy: 'GreenTee', city: 'Coquitlam, BC', address: '1630 Parkway Boulevard, Coquitlam, BC V3E 2Y5', image: '/images/westwood2.jpg' },
+  { id: 'swaneset', name: 'Swan-e-Set', academy: 'Golf Mecca', city: 'Pitt Meadows, BC', address: '16651 Rannie Rd, Pitt Meadows, BC V3Y 1Z1', image: '/images/swaneset.jpeg' },
 ]
 
 export const mapsUrl = (address) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`
