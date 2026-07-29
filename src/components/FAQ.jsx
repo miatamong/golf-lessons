@@ -58,11 +58,9 @@ export default function FAQ() {
         </div>
 
         <div className="text-center mt-10">
-          <p className="text-[#1e3a5f]/60 text-sm mb-3">
-            {F.stillText} <a href="#contact" className="text-[#c9a84c] font-semibold hover:underline">{F.reachOut}</a> {F.readyText}
-          </p>
+          <p className="text-[#1e3a5f]/70 text-sm mb-4">{F.stillText}</p>
           <a
-            href="#lessons"
+            href="#contact"
             className="inline-block bg-[#1e3a5f] hover:bg-[#16304f] text-white font-semibold px-8 py-3.5 rounded-full text-sm transition-all duration-200 shadow-lg hover:-translate-y-0.5"
           >
             {F.cta}

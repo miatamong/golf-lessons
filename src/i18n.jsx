@@ -32,7 +32,7 @@ export const TRANSLATIONS = {
       selectedLabel: 'Selected',
       viewingLabel: 'Pricing',
       sameForAll: 'Same price for juniors and adults',
-      resultNote: 'Message Willis to confirm your time. Usually replies within 24 hours.',
+      resultNote: (courseName) => `Book your ${courseName} lesson by message. Willis usually replies within 24 hours.`,
       payInfo: {
         title: 'Payment & Policy',
         items: [
@@ -134,11 +134,8 @@ export const TRANSLATIONS = {
       title: 'Common Questions',
       items: [
         { q: 'Where do I start?', a: 'New to Willis? Begin with a 1:1 lesson - a full swing assessment that maps out a personalized plan from the very first session.' },
-        { q: 'Not sure if my child will enjoy it?', a: 'There is no free trial, but a fun, low-pressure way to start is a summer camp or group lesson - a great way to see if your child enjoys the game before moving into private lessons.' },
-        { q: 'My child has never played - is that okay?', a: 'Absolutely. Willis coaches juniors and adults at every level, from first-timers to competitive players. Each lesson is tailored to the student, with a focus on solid fundamentals, confidence, and a genuine love for the game.' },
-        { q: 'What ages do you teach?', a: 'Juniors up to 18, and adults 18 and over. Every lesson is tailored to the age and level of each student.' },
+        { q: 'My child has never played - is that okay?', a: 'Absolutely. Willis coaches juniors (up to 18) and adults at every level, from first-timers to competitive players. Each lesson is tailored to the student, with a focus on solid fundamentals, confidence, and a genuine love for the game.' },
         { q: 'How will I know my child is progressing?', a: 'You will get clear feedback after each session and a simple plan for what to work on next. Willis keeps parents in the loop, so you always know how your child is developing.' },
-        { q: 'Where are lessons held?', a: 'Lessons are available at two courses: Swan-e-Set (Pitt Meadows, BC) and Westwood Plateau (Coquitlam, BC). Choose your course in the Lessons section above.' },
         { q: 'How do group lessons work?', a: 'For the GT4K Junior Program, your child can join without knowing the other students. For semi-private lessons, you bring the friends or family you would like to learn with.', link: { url: 'https://greenteeacademy.com/junior/gt4k-program/', label: 'About the GT4K Junior Program' } },
         { q: 'How do I book, and how much does it cost?', a: 'Pricing depends on the course. Use the Lessons section to see full rates, then message Willis on KakaoTalk, Instagram, or by text to confirm your time.' },
         { q: 'How long is a session?', a: 'Private 1:1 lessons are 45 minutes or 1 hour, and small group lessons run 1 hour. We will pick the length that fits your goals when you reach out.' },
@@ -147,7 +144,7 @@ export const TRANSLATIONS = {
       stillText: 'Still have questions?',
       reachOut: 'Reach out.',
       readyText: 'Ready to go?',
-      cta: 'See Lessons & Pricing',
+      cta: 'Contact Willis',
     },
     contact: {
       eyebrow: 'Get in Touch',
@@ -198,7 +195,7 @@ export const TRANSLATIONS = {
       selectedLabel: '선택됨',
       viewingLabel: '가격',
       sameForAll: '주니어·성인 동일 가격',
-      resultNote: '메시지를 보내 시간을 확정하세요. 보통 24시간 내에 답변드립니다.',
+      resultNote: (courseName) => `${courseName} 레슨을 메시지로 예약하세요. 보통 24시간 내에 답변드립니다.`,
       payInfo: {
         title: '결제 및 정책',
         items: [
@@ -297,11 +294,8 @@ export const TRANSLATIONS = {
       title: '자주 묻는 질문',
       items: [
         { q: '어디서부터 시작하나요?', a: '윌리스와 처음이신가요? 1:1 레슨으로 시작하세요. 전체 스윙을 점검하고 첫 시간부터 맞춤 계획을 세워드립니다.' },
-        { q: '아이가 좋아할지 확신이 안 서요.', a: '무료 체험은 없지만, 부담 없이 시작하는 좋은 방법은 여름 캠프나 그룹 레슨입니다. 개인 레슨으로 넘어가기 전에 아이가 골프를 즐기는지 확인하기 좋습니다.' },
-        { q: '아이가 골프를 한 번도 안 해봤는데 괜찮을까요?', a: '물론입니다. 윌리스는 주니어와 성인을 초보부터 시합 준비 단계까지 지도합니다. 각 레슨은 학생에게 맞춰 진행하며, 탄탄한 기본기와 자신감, 골프에 대한 진짜 흥미에 집중합니다.' },
-        { q: '몇 살부터 배울 수 있나요?', a: '주니어는 만 18세까지, 성인은 만 18세 이상입니다. 모든 레슨은 학생의 나이와 실력에 맞춰 진행됩니다.' },
+        { q: '아이가 골프를 한 번도 안 해봤는데 괜찮을까요?', a: '물론입니다. 윌리스는 주니어(만 18세까지)와 성인을 초보부터 시합 준비 단계까지 지도합니다. 각 레슨은 학생에게 맞춰 진행하며, 탄탄한 기본기와 자신감, 골프에 대한 진짜 흥미에 집중합니다.' },
         { q: '아이가 잘 늘고 있는지 어떻게 알 수 있나요?', a: '매 수업 후 명확한 피드백과 다음에 연습할 내용을 정리해 드립니다. 윌리스는 학부모님과 꾸준히 소통해서 아이의 성장 과정을 늘 알 수 있게 합니다.' },
-        { q: '레슨은 어디서 진행되나요?', a: '두 골프장에서 진행됩니다: Swan-e-Set (Pitt Meadows, BC)과 Westwood Plateau (Coquitlam, BC). 위 레슨 섹션에서 골프장을 선택하세요.' },
         { q: '그룹 레슨은 어떻게 진행되나요?', a: 'GT4K 주니어 프로그램은 다른 학생을 몰라도 참여할 수 있습니다. 세미프라이빗 레슨은 함께 배울 친구나 가족을 직접 데려오시면 됩니다.', link: { url: 'https://greenteeacademy.com/junior/gt4k-program/', label: 'GT4K 주니어 프로그램 자세히 보기' } },
         { q: '예약은 어떻게 하고, 비용은 얼마인가요?', a: '가격은 골프장에 따라 다릅니다. 레슨 섹션에서 전체 가격을 확인한 뒤, 카카오톡, 인스타그램, 또는 문자로 윌리스에게 연락해 시간을 확정하세요.' },
         { q: '한 세션은 얼마나 걸리나요?', a: '개인 1:1 레슨은 45분 또는 1시간이고, 소그룹 레슨은 1시간입니다. 목표에 맞는 시간을 문의 시 함께 정해 드립니다.' },
@@ -310,7 +304,7 @@ export const TRANSLATIONS = {
       stillText: '더 궁금한 점이 있으신가요?',
       reachOut: '문의하기.',
       readyText: '시작할 준비 되셨나요?',
-      cta: '레슨 & 가격 보기',
+      cta: '문의하기',
     },
     contact: {
       eyebrow: '문의하기',

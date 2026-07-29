@@ -338,7 +338,7 @@ export default function Lessons() {
 
         {/* Close: personal contact */}
         <div className="mt-8 text-center">
-          <p className="text-[#1e3a5f]/70 text-sm mb-4">{L.resultNote}</p>
+          <p className="text-[#1e3a5f]/70 text-sm mb-4">{L.resultNote(selectedCourse.name)}</p>
           <ContactButtons message={message} />
         </div>
       </div>
