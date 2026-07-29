@@ -44,7 +44,6 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-[#c9a84c] text-sm uppercase tracking-widest mb-4">{F.contact}</h4>
             <ul className="space-y-2 text-sm text-white/50">
-              <li>{CONTACT.email}</li>
               <li>{CONTACT.phone}</li>
               {LOCATIONS.map((l) => (
                 <li key={l.id}>
