@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import ContactButtons from './ContactButtons'
 import { useLang } from '../i18n.jsx'
-import { CONTACT, LOCATIONS } from '../contact'
+import { CONTACT, visibleLocations } from '../contact'
 
 export default function Contact() {
   const { t } = useLang()
@@ -36,7 +36,7 @@ export default function Contact() {
       label: C.locationLabel,
       value: (
         <span className="block space-y-1">
-          {LOCATIONS.map((l) => (
+          {visibleLocations().map((l) => (
             <span key={l.id} className="block">
               <span className="font-medium">{l.name}</span> · {l.address}
             </span>

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import ContactButtons from './ContactButtons'
 import { useLang } from '../i18n.jsx'
-import { LOCATIONS, mapsUrl } from '../contact'
+import { mapsUrl, visibleLocations } from '../contact'
 
 // 가격 데이터 (언어 무관 숫자). 라벨은 src/i18n.jsx 의 lessons.pricing 에서 관리.
 const PRICING = {
@@ -49,7 +49,7 @@ const PRICING = {
   },
 }
 
-const COURSES = LOCATIONS
+const COURSES = visibleLocations()
 
 const money = (n) => `$${n.toLocaleString('en-US')}`
 
@@ -216,7 +216,7 @@ export default function Lessons() {
   const { t } = useLang()
   const L = t.lessons
   const P = L.pricing
-  const [course, setCourse] = useState('westwood')
+  const [course, setCourse] = useState(COURSES[0].id)
 
   const selectedCourse = COURSES.find((c) => c.id === course)
   const data = PRICING[course]
@@ -249,7 +249,9 @@ export default function Lessons() {
           ))}
         </div>
 
-        {/* Course tabs as photo cards */}
+        {/* Course tabs as photo cards (hidden when only one venue is shown) */}
+        {COURSES.length > 1 && (
+        <>
         <div className="text-[#1e3a5f]/40 text-xs font-semibold uppercase tracking-widest mb-3">{L.chooseCourse}</div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
           {COURSES.map((c) => (
@@ -274,6 +276,8 @@ export default function Lessons() {
             </button>
           ))}
         </div>
+        </>
+        )}
 
         {/* Selected course header (which course these prices are for) */}
         <div className="text-center mb-8">

@@ -6,6 +6,22 @@ export const LOCATIONS = [
 
 export const mapsUrl = (address) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`
 
+// ?venue=westwood 처럼 특정 골프장만 보여주는 공유용 모드
+export function activeVenue() {
+  try {
+    return new URLSearchParams(window.location.search).get('venue')
+  } catch {
+    return null
+  }
+}
+
+// 현재 보여줄 골프장 목록 (venue 파라미터가 있으면 그 하나만)
+export function visibleLocations() {
+  const v = activeVenue()
+  const filtered = v ? LOCATIONS.filter((l) => l.id === v) : LOCATIONS
+  return filtered.length ? filtered : LOCATIONS
+}
+
 // 상담 채널 정보 (한 곳에서 관리)
 export const CONTACT = {
   kakao: 'https://open.kakao.com/o/s8THCgni',
