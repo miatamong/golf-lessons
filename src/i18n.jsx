@@ -64,6 +64,7 @@ export const TRANSLATIONS = {
         playingNote: 'on-course',
         holes9: '9 holes',
         holes18: '18 holes',
+        popular: 'Popular',
         taxNote: 'Prices do not include tax.',
       },
       message: (courseName, location) =>
@@ -229,6 +230,7 @@ export const TRANSLATIONS = {
         playingNote: '온코스',
         holes9: '9홀',
         holes18: '18홀',
+        popular: '인기',
         taxNote: '표시 가격은 세금 별도입니다.',
       },
       message: (courseName, location) =>

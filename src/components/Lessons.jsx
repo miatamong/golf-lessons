@@ -86,11 +86,18 @@ function TableShell({ title, note, colLabels, children }) {
   )
 }
 
-function Row({ label, cols, isLast }) {
+function Row({ label, cols, isLast, badge, highlight }) {
   const grid = cols.length === 2 ? 'grid-cols-[1.4fr_1fr_1fr]' : 'grid-cols-[2fr_1fr]'
   return (
-    <div className={`grid ${grid} items-center px-4 sm:px-6 py-4 ${!isLast ? 'border-b border-[#e8dcc8]' : ''}`}>
-      <div className="font-semibold text-[#1e3a5f] text-sm sm:text-base">{label}</div>
+    <div className={`grid ${grid} items-center px-4 sm:px-6 py-4 ${highlight ? 'bg-[#c9a84c]/10' : ''} ${!isLast ? 'border-b border-[#e8dcc8]' : ''}`}>
+      <div className="font-semibold text-[#1e3a5f] text-sm sm:text-base flex items-center gap-2 flex-wrap">
+        {label}
+        {badge && (
+          <span className="text-[10px] font-bold uppercase tracking-wide text-[#7A6A2E] bg-[#c9a84c]/25 px-2 py-0.5 rounded-full">
+            {badge}
+          </span>
+        )}
+      </div>
       {cols}
     </div>
   )
@@ -101,13 +108,14 @@ function SwanPrivate({ data, P }) {
   const [d60, d45] = data
   const rows = [
     { label: P.lessonLabel(1), cells: [{ total: d60.single }, { total: d45.single }] },
-    { label: P.lessonLabel(5), cells: [d60.pack5, d45.pack5] },
+    { label: P.lessonLabel(5), cells: [d60.pack5, d45.pack5], popular: true },
     { label: P.lessonLabel(10), cells: [d60.pack10, d45.pack10] },
   ]
   return (
     <TableShell title={P.privateTitle} colLabels={[P.dur60, P.dur45]}>
       {rows.map((r, i) => (
         <Row key={r.label} label={r.label} isLast={i === rows.length - 1}
+          badge={r.popular ? P.popular : null} highlight={r.popular}
           cols={r.cells.map((c, j) => <Price key={j} total={c.total} per={c.per} P={P} />)} />
       ))}
     </TableShell>
@@ -157,6 +165,7 @@ function SwanPlaying({ data, P }) {
 function WwPrivate({ data, P }) {
   const rows = data.counts.map((n) => ({
     label: P.lessonLabel(n),
+    popular: n === 5,
     cells: [
       { total: data.junior[n], per: data.juniorPer[n] ?? null },
       { total: data.adult[n], per: data.adultPer[n] ?? null },
@@ -166,6 +175,7 @@ function WwPrivate({ data, P }) {
     <TableShell title={P.privateTitle} colLabels={[P.junior, P.adult]}>
       {rows.map((r, i) => (
         <Row key={r.label} label={r.label} isLast={i === rows.length - 1}
+          badge={r.popular ? P.popular : null} highlight={r.popular}
           cols={r.cells.map((c, j) => <Price key={j} total={c.total} per={c.per} P={P} />)} />
       ))}
     </TableShell>
