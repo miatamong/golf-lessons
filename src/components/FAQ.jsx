@@ -1,42 +1,22 @@
 import { useState } from 'react'
-
-const faqs = [
-  {
-    q: 'Where do I start?',
-    a: 'New to us? Begin with a free trial class to experience our coaching, then move into an Intro lesson for a full swing assessment.',
-  },
-  {
-    q: "I'm a complete beginner - is that okay?",
-    a: 'Absolutely. Lessons are tailored to every skill level, from first-timers to competitive players.',
-  },
-  {
-    q: 'Where are lessons held?',
-    a: 'Putting lessons are held in Surrey, BC. All other sessions can be arranged at your home course upon request.',
-  },
-  {
-    q: 'How long is a session?',
-    a: 'Sessions range from 45 minutes for putting and 1:1 lessons, to approximately 90 minutes for 9 holes or 3 hours for a full round.',
-  },
-  {
-    q: 'What should I bring?',
-    a: 'Just your clubs and comfortable golf attire.',
-  },
-]
+import { useLang } from '../i18n.jsx'
 
 export default function FAQ() {
+  const { t } = useLang()
+  const F = t.faq
   const [open, setOpen] = useState(0)
 
   return (
     <section id="faq" className="bg-white pt-8 sm:pt-12 pb-16 sm:pb-24 px-4">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-10 sm:mb-16">
-          <span className="text-[#7A6A2E] text-sm font-semibold tracking-widest uppercase">FAQ</span>
-          <h2 className="mt-2 text-4xl sm:text-5xl font-bold text-[#1e3a5f]">Common Questions</h2>
+          <span className="text-[#7A6A2E] text-sm font-semibold tracking-widest uppercase">{F.eyebrow}</span>
+          <h2 className="mt-2 text-4xl sm:text-5xl font-bold text-[#1e3a5f]">{F.title}</h2>
           <div className="mt-4 w-16 h-1 bg-[#c9a84c] mx-auto rounded-full" />
         </div>
 
         <div className="space-y-3">
-          {faqs.map((item, i) => (
+          {F.items.map((item, i) => (
             <div key={i} className="rounded-2xl overflow-hidden">
               <button
                 onClick={() => setOpen(open === i ? null : i)}
@@ -61,6 +41,16 @@ export default function FAQ() {
                 <div className="bg-[#f5f0e8] px-6 py-5 text-sm leading-relaxed text-[#1e3a5f]/80">
                   <span className="font-bold text-[#1e3a5f] mr-2">A.</span>
                   {item.a}
+                  {item.link && (
+                    <a
+                      href={item.link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block mt-2 text-[#c9a84c] font-semibold hover:underline"
+                    >
+                      {item.link.label} →
+                    </a>
+                  )}
                 </div>
               )}
             </div>
@@ -69,13 +59,13 @@ export default function FAQ() {
 
         <div className="text-center mt-10">
           <p className="text-[#1e3a5f]/60 text-sm mb-3">
-            Still have questions? <a href="#contact" className="text-[#c9a84c] font-semibold hover:underline">Reach out.</a> Ready to go?
+            {F.stillText} <a href="#contact" className="text-[#c9a84c] font-semibold hover:underline">{F.reachOut}</a> {F.readyText}
           </p>
           <a
-            href="#booking"
+            href="#lessons"
             className="inline-block bg-[#1e3a5f] hover:bg-[#16304f] text-white font-semibold px-8 py-3.5 rounded-full text-sm transition-all duration-200 shadow-lg hover:-translate-y-0.5"
           >
-            Claim Your Free Class
+            {F.cta}
           </a>
         </div>
       </div>

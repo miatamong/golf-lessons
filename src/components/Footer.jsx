@@ -1,35 +1,36 @@
+import { useLang } from '../i18n.jsx'
+import { CONTACT, LOCATIONS } from '../contact'
+
 export default function Footer() {
+  const { t } = useLang()
+  const F = t.footer
+  const year = new Date().getFullYear()
+
+  const quickLinks = [
+    [t.nav.home, '#home'],
+    [t.nav.about, '#about'],
+    [t.nav.lessons, '#lessons'],
+    [t.nav.contact, '#contact'],
+  ]
+
   return (
     <footer className="bg-[#0f2440] text-white py-12 pb-24 sm:pb-12 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="grid sm:grid-cols-3 gap-8 mb-10">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 bg-[#1e3a5f] rounded-full flex items-center justify-center border border-white/20">
-                <span className="text-[#c9a84c] font-bold text-sm">WL</span>
-              </div>
-              <div>
-                <span className="font-bold text-lg leading-tight block">Willis Lee</span>
-                <span className="text-[#c9a84c] text-xs tracking-widest uppercase">Golf Pro</span>
-              </div>
+            <div className="mb-4">
+              <span className="text-white font-bold text-xl tracking-tight">
+                Willis <span className="text-[#c9a84c]">Lee</span>
+              </span>
             </div>
-            <p className="text-white/50 text-sm leading-relaxed">
-              Anyone • Anywhere • Swing
-            </p>
           </div>
 
           {/* Quick links */}
           <div>
-            <h4 className="font-semibold text-[#c9a84c] text-sm uppercase tracking-widest mb-4">Quick Links</h4>
+            <h4 className="font-semibold text-[#c9a84c] text-sm uppercase tracking-widest mb-4">{F.quickLinks}</h4>
             <ul className="space-y-2">
-              {[
-                ['Home', '#home'],
-                ['About', '#about'],
-                ['Lessons', '#lessons'],
-                ['Booking', '#booking'],
-                ['Contact', '#contact'],
-              ].map(([label, href]) => (
+              {quickLinks.map(([label, href]) => (
                 <li key={href}>
                   <a href={href} className="text-white/50 hover:text-white text-sm transition-colors">
                     {label}
@@ -41,16 +42,21 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold text-[#c9a84c] text-sm uppercase tracking-widest mb-4">Contact</h4>
+            <h4 className="font-semibold text-[#c9a84c] text-sm uppercase tracking-widest mb-4">{F.contact}</h4>
             <ul className="space-y-2 text-sm text-white/50">
-              <li>slowfastmedium@gmail.com</li>
-              <li>778-988-9921</li>
-              <li>Surrey, BC</li>
+              <li>{CONTACT.email}</li>
+              <li>{CONTACT.phone}</li>
+              {LOCATIONS.map((l) => (
+                <li key={l.id}>
+                  <span className="block text-white/70">{l.name}</span>
+                  <span className="block">{l.address}</span>
+                </li>
+              ))}
             </ul>
             <div className="flex gap-3 mt-4">
               {[
-                { name: 'Instagram', href: 'https://instagram.com/willisleegolf' },
-                { name: 'KakaoTalk', href: 'https://open.kakao.com/o/s8THCgni' },
+                { name: 'Instagram', href: CONTACT.instagramProfile },
+                { name: 'KakaoTalk', href: CONTACT.kakao },
               ].map((s) => (
                 <a
                   key={s.name}
@@ -67,8 +73,8 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-white/50">
-          <span>© {new Date().getFullYear()} Willis Lee Golf. All rights reserved.</span>
-          <span>Private Golf Instructor · Surrey, BC</span>
+          <span>{F.rights(year)}</span>
+          <span>{F.role}</span>
         </div>
       </div>
     </footer>
