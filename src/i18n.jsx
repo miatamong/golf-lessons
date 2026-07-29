@@ -81,7 +81,6 @@ export const TRANSLATIONS = {
       experienceTitle: 'Coaching Experience',
       experience: [
         { place: 'Private Coaching', role: 'Swan-e-Set & Westwood Plateau', year: 'Present' },
-        { place: 'Golf Mecca', role: 'Asst. Coach, Swan-e-Set GC', year: '2022–26' },
         { place: 'Junior Summer Camps', role: 'Swan-e-Set & Greentee', year: '2022–26' },
         { place: 'Special Olympics', role: 'Golf Volunteer', year: '2014' },
       ],
@@ -242,7 +241,6 @@ export const TRANSLATIONS = {
       experienceTitle: '코칭 경력',
       experience: [
         { place: '개인 레슨', role: 'Swan-e-Set & Westwood Plateau', year: '현재' },
-        { place: 'Golf Mecca', role: 'Swan-e-Set GC 어시스턴트 코치', year: '2022–26' },
         { place: '주니어 써머 캠프', role: 'Swan-e-Set & Greentee', year: '2022–26' },
         { place: 'Special Olympics', role: '골프 봉사', year: '2014' },
       ],
