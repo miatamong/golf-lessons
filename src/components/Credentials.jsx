@@ -1,11 +1,9 @@
 import { useLang } from '../i18n.jsx'
-import { activeVenue } from '../contact'
 
 // 히어로 바로 아래 신뢰 로고 바 (자격 / 활동 골프장)
 export default function Credentials() {
   const { t } = useLang()
   const A = t.about
-  const venue = activeVenue()
   return (
     <section className="bg-white py-8 sm:py-10 px-4 border-b border-[#e8dcc8]">
       <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-8 sm:gap-14">
@@ -25,12 +23,8 @@ export default function Credentials() {
         <div className="flex flex-col items-center gap-2">
           <span className="text-[10px] font-semibold uppercase tracking-widest text-[#1e3a5f]/40">{A.coachingLabel}</span>
           <div className="flex items-center gap-6 sm:gap-8">
-            {venue !== 'swaneset' && (
-              <img src="/images/greentee.webp" alt="Greentee Golf Academy" loading="lazy" className="h-10 sm:h-12 w-auto" />
-            )}
-            {venue !== 'westwood' && (
-              <img src="/images/golf-mecca.png" alt="Golf Mecca Center" loading="lazy" className="h-10 sm:h-12 w-auto" />
-            )}
+            <img src="/images/greentee.webp" alt="Greentee Golf Academy" loading="lazy" className="h-10 sm:h-12 w-auto" />
+            <img src="/images/golf-mecca.png" alt="Golf Mecca Center" loading="lazy" className="h-10 sm:h-12 w-auto" />
           </div>
         </div>
       </div>

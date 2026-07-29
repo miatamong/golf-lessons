@@ -1,5 +1,5 @@
 import { useLang } from '../i18n.jsx'
-import { CONTACT, visibleLocations } from '../contact'
+import { CONTACT, LOCATIONS } from '../contact'
 
 export default function Footer() {
   const { t } = useLang()
@@ -45,7 +45,7 @@ export default function Footer() {
             <h4 className="font-semibold text-[#c9a84c] text-sm uppercase tracking-widest mb-4">{F.contact}</h4>
             <ul className="space-y-2 text-sm text-white/50">
               <li>{CONTACT.phone}</li>
-              {visibleLocations().map((l) => (
+              {LOCATIONS.map((l) => (
                 <li key={l.id}>
                   <span className="block text-white/70">{l.name}</span>
                   <span className="block">{l.address}</span>

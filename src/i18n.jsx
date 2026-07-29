@@ -32,7 +32,8 @@ export const TRANSLATIONS = {
       selectedLabel: 'Selected',
       viewingLabel: 'Pricing',
       sameForAll: 'Same price for juniors and adults',
-      resultNote: (courseName) => `Book your ${courseName} lesson by message. Willis usually replies within 24 hours.`,
+      bookTitle: (courseName) => `Book your ${courseName} lesson`,
+      replyNote: 'Message Willis to confirm your time. He usually replies within 24 hours.',
       payInfo: {
         title: 'Payment & Policy',
         items: [
@@ -80,9 +81,9 @@ export const TRANSLATIONS = {
       coachingLabel: 'Coaching at',
       experienceTitle: 'Coaching Experience',
       experience: [
-        { place: 'Private Coaching', role: 'Swan-e-Set', year: '2022–Present' },
-        { place: 'Private Coaching', role: 'Westwood Plateau', year: '2026–Present' },
-        { place: 'Junior Summer Camps', role: 'Swan-e-Set & Greentee', year: '2022–26' },
+        { place: 'Private Coaching', role: 'Swan-e-Set (Golf Mecca)', year: '2022–Present' },
+        { place: 'Private Coaching', role: 'Westwood Plateau (GreenTee)', year: '2026–Present' },
+        { place: 'Junior Summer Camps', role: 'Swan-e-Set (Golf Mecca) & Westwood (GreenTee)', year: '2022–26' },
         { place: 'Special Olympics', role: 'Golf Volunteer', year: '2014' },
       ],
       philosophyTitle: 'Philosophy',
@@ -193,7 +194,8 @@ export const TRANSLATIONS = {
       selectedLabel: '선택됨',
       viewingLabel: '가격',
       sameForAll: '주니어·성인 동일 가격',
-      resultNote: (courseName) => `${courseName} 레슨을 메시지로 예약하세요. 보통 24시간 내에 답변드립니다.`,
+      bookTitle: (courseName) => `${courseName} 레슨 예약하기`,
+      replyNote: '메시지로 시간을 확정하세요. 보통 24시간 내에 답변드립니다.',
       payInfo: {
         title: '결제 및 정책',
         items: [
@@ -241,9 +243,9 @@ export const TRANSLATIONS = {
       coachingLabel: '활동 골프장',
       experienceTitle: '코칭 경력',
       experience: [
-        { place: '개인 레슨', role: 'Swan-e-Set', year: '2022~현재' },
-        { place: '개인 레슨', role: 'Westwood Plateau', year: '2026~현재' },
-        { place: '주니어 써머 캠프', role: 'Swan-e-Set & Greentee', year: '2022–26' },
+        { place: '개인 레슨', role: 'Swan-e-Set (Golf Mecca)', year: '2022~현재' },
+        { place: '개인 레슨', role: 'Westwood Plateau (GreenTee)', year: '2026~현재' },
+        { place: '주니어 써머 캠프', role: 'Swan-e-Set (Golf Mecca) & Westwood (GreenTee)', year: '2022–26' },
         { place: 'Special Olympics', role: '골프 봉사', year: '2014' },
       ],
       philosophyTitle: '철학',

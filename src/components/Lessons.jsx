@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import ContactButtons from './ContactButtons'
 import { useLang } from '../i18n.jsx'
-import { mapsUrl, visibleLocations } from '../contact'
+import { LOCATIONS, mapsUrl } from '../contact'
 
 // 가격 데이터 (언어 무관 숫자). 라벨은 src/i18n.jsx 의 lessons.pricing 에서 관리.
 const PRICING = {
@@ -49,7 +49,7 @@ const PRICING = {
   },
 }
 
-const COURSES = visibleLocations()
+const COURSES = LOCATIONS
 
 const money = (n) => `$${n.toLocaleString('en-US')}`
 
@@ -249,9 +249,7 @@ export default function Lessons() {
           ))}
         </div>
 
-        {/* Course tabs as photo cards (hidden when only one venue is shown) */}
-        {COURSES.length > 1 && (
-        <>
+        {/* Course tabs as photo cards */}
         <div className="text-[#1e3a5f]/40 text-xs font-semibold uppercase tracking-widest mb-3">{L.chooseCourse}</div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
           {COURSES.map((c) => (
@@ -276,8 +274,6 @@ export default function Lessons() {
             </button>
           ))}
         </div>
-        </>
-        )}
 
         {/* Selected course header (which course these prices are for) */}
         <div className="text-center mb-8">
@@ -342,7 +338,8 @@ export default function Lessons() {
 
         {/* Close: personal contact */}
         <div className="mt-8 text-center">
-          <p className="text-[#1e3a5f]/70 text-sm mb-4">{L.resultNote(selectedCourse.name)}</p>
+          <p className="text-[#1e3a5f] font-bold text-lg mb-1">{L.bookTitle(selectedCourse.name)}</p>
+          <p className="text-[#1e3a5f]/60 text-sm mb-4">{L.replyNote}</p>
           <ContactButtons message={message} />
         </div>
       </div>
