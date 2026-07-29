@@ -172,7 +172,7 @@ function WwPrivate({ data, P }) {
     ],
   }))
   return (
-    <TableShell title={P.privateTitle} colLabels={[P.junior, P.adult]}>
+    <TableShell title={P.privateTitle} note={P.dur60} colLabels={[P.junior, P.adult]}>
       {rows.map((r, i) => (
         <Row key={r.label} label={r.label} isLast={i === rows.length - 1}
           badge={r.popular ? P.popular : null} highlight={r.popular}
